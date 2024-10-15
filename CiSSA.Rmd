@@ -1,0 +1,725 @@
+---
+title: "Circulant SSA"
+author: "Погребников Николай"
+output: html_notebook
+---
+
+## Вспомогательные функции
+
+```{r}
+library(Rssa)
+library(signal)
+library(gsignal)
+
+
+dftmtx <- function(n) {
+  y <- stats::mvfft(diag(1, n))
+  y
+}
+
+diag_averaging <- function(A){
+  B <- A[nrow(A):1, ] |> Re()
+  lapply(split(B, -(row(B) - col(B)) ), mean) |> as.numeric()
+}
+
+shift_vector <- function(vec) {
+  last_element <- tail(vec, 1)
+  vec <- vec[-length(vec)]
+  shifted_vec <- c(last_element, vec)
+  return(shifted_vec)
+}
+
+extend <- function(x, H){
+  # Вычисление коэффициентов AR модели для дифференцированного ряда
+  N <- length(x)
+  p <- floor(N / 3)
+  dx <- diff(x)
+  # A <- ar(dx, order.max = p, method = "yule-walker")$ar
+  A <- aryule(dx, p)$a
+  
+  # Правое расширение
+  y <- x
+  dy <- diff(y)
+  er <- signal::filter(A, 1, dy)
+  dy <- signal::filter(1, A, c(er, rep(0, H)))
+  y <- y[1] + c(0, cumsum(dy))
+  
+  # Левое расширение
+  y <- rev(y)
+  dy <- diff(y)
+  er <- signal::filter(A,1,dy)
+  dy <- signal::filter(1,A,c(er, rep(0, H)))
+  y <- y[1] + c(0, cumsum(dy))
+  
+  # Расширенный ряд
+  xe <- rev(y)
+  
+  # Вывод результатов
+  xe 
+}
+```
+
+## CiSSA
+
+Подаётся на вход временной ряд, длина окна (если её нет, то она равна длине ряда + 1 пополам) и информация о том, нужно ли расширить ряд. Расширять ряд стоит при стохастическом тренде (Autoregressive extension (default). It is indicated for stationary and stochastic trend time series as well). Реализовано только Autoregressive extension.
+
+\
+На выходе список выдаётся список list(t_series, importance).\
+t_series — матрица, по столбцам которой располагаются временные ряды, отвечающие за частоты (i-1)/L, где i — номер столбца, L — длина окна.\
+importance — вектор, отвечающий за значимость i-ого временного ряда в разлолжении. Чем больше значение, тем больший вклад внёс i-тый временной ряд.
+
+```{r}
+circulant_SSA <- function(ts, L = NULL, extend_flag = FALSE){
+  time_series <- ts
+  # Construct trajectory matrix
+  N <- length(time_series)
+  if (is.null(L)){
+    L <- (N + 1)%/%2
+  }
+  # Проверка на расширения ряда
+  if (extend_flag == FALSE){
+    H <- 0
+    time_series <- ts
+  }
+  else{
+    H <- L
+    time_series <- extend(ts, H)
+  }
+  
+  X <- hankel(time_series, L)
+  
+  # Number of symmetric frequency pairs around 1/2
+  if (L %% 2) {
+    nf2 <- (L + 1) / 2 - 1
+  } else {
+    nf2 <- L / 2 - 1
+  }
+  
+  # Number of frequencies <= 1/2
+  nft <- nf2 + abs((L %% 2) - 2)
+  
+  # Decomposition
+  # Estimate autocovariance     OK
+  autocov <- numeric(L)
+  for (m in 0:(L-1)){
+    autocov[[m+1]] <- sum(time_series[1:(N-m)] * time_series[(1+m):N]) / (N-m)
+  }
+  
+  # First row of circulant matrix
+  circ_first_row <- numeric(L)
+  for (m in 0:(L-1)){
+    circ_first_row[[m+1]] <- (L-m)/L * autocov[[m+1]] + (m)/L * autocov[[L-m]]
+  }
+  
+  # Build circulant matrix
+  S_C <- matrix(circ_first_row, nrow = 1)
+  shifted_vector <- circ_first_row
+  for (i in 2:(L)) {
+    shifted_vector <- shift_vector(shifted_vector)
+    # S_C <- rbind(S_C, as.vector(shifted_vector))
+    S_C <- rbind(as.vector(shifted_vector), S_C)
+  }
+  
+  # Eigenvectors of circulant matrix (unitary base)
+  U <- dftmtx(L)/sqrt(L)
+  
+  # Real eigenvectors (orthonormal base)
+  U[, 1] <- Re(U[, 1])
+  for (k in 1:nf2) {
+    u_k <- U[, k + 1]
+    U[, k + 1] <- sqrt(2) * Re(u_k)
+    U[, L + 2 - (k + 1)] <- sqrt(2) * Im(u_k)
+  }
+  if (L %% 2 != 0) {
+    U[, nft] <- Re(U[, nft])
+  }
+  
+  # Eigenvalues of circulant matrix: estimated power spectral density
+  psd <- abs(diag(t(U) %*% S_C %*% U))
+  
+  # Principal components
+  W <- t(U) %*% X
+  # Reconstruction
+  # Elementary reconstructed series
+  R <- matrix(0, nrow = N+2*H, ncol = L)
+  for (k in 1:L) {
+    R[, k] <- U[ ,k] %*% t(W[k, ]) |> diag_averaging()
+  }
+  
+  # Grouping by frequency
+  # Elementary reconstructed series by frequency
+  Z <- matrix(0, nrow = N+2*H, ncol = nft)
+  Z[, 1] <- R[, 1]
+  # Importance of component
+  imp <- numeric(nft)
+  lambda_sm <- sum(psd)
+  imp[1] <- psd[1]/lambda_sm
+  for (k in 1:nf2) {
+    Z[, k + 1] <- R[, k + 1] + R[, L + 2 - (k + 1)]
+    imp[k+1] <- (psd[k+1] + psd[ L + 2 - (k + 1)])/lambda_sm
+  }
+  if (L %% 2 != 0) {
+    Z[, nft] <- R[, nft]
+    imp[nft] <- psd[nft] / lambda_sm
+  }
+  list(t_series = Z[(H+1):(N+H),], importance = imp)
+}
+```
+
+```{r}
+generate_ts <- function(func, n=1e3, ...){
+  1:n |> func(...) |> ts()
+}
+
+f_cos <- function(x, A = 1, omega = 1/4, phi = 0){
+  f_exp_mod_harm_series(x, A, alpha = 0, omega = omega, phi = phi)
+}
+
+f_sin <- function(x, A = 1, omega = 1/4, phi = 3*pi/2){
+  f_exp_mod_harm_series(x, A, alpha = 0, omega = omega, phi = phi)
+}
+
+f_exp <- function(x, A = 1, alpha = 1){
+  A * exp(alpha * x)
+}
+
+f_exp_cos <- function(x, A = 1, alpha = 1, omega = 1/4, phi = 0){
+  f_exp_mod_harm_series(x, A, alpha, omega, phi)
+}
+
+f_const <- function(x, C = 0){
+  rep(C, length(x))
+}
+
+f_exp_mod_harm_series <- function(x, A = 1, alpha = 1, omega = 1/4, phi = 0){
+  A*exp(alpha*x)*cos(2*pi*omega*x + phi)
+}
+
+f_linear <- function(x, a = 1, b = 0){
+  a*x + b
+}
+mse <- function(f_true, f_reconstructed){
+   mean((f_true - f_reconstructed)^2) 
+}
+```
+
+#### Ошибка при Lw in N, Kw not in N
+
+```{r}
+n <- 96*2+5
+L <- 96
+f_sum <- function(x){
+  f_const(x, C = 1) + f_cos(x, omega = 1/12) 
+}
+
+
+f_const |> generate_ts(n, C = 1) |>
+  plot(col = "green", ylim = c(-1, 2), ylab = "f_n")
+f_cos |>
+  generate_ts(n, omega = 1/12) |>
+  lines(col="green")
+f_sum |> generate_ts(n) |> lines(lwd = 3, col='red')
+f_n <- f_sum(1:n)
+
+
+
+c <- circulant_SSA(f_n, L = 96, extend_flag = FALSE)
+r <- c$t_series
+
+f_C <- f_const |> generate_ts(n, C = 1)
+f_c <- f_cos |> generate_ts(n, omega = 1/12)
+print("Ошибки при CiSSA")
+print(paste("Ошибка при вычислении C = 1: ", mse(f_C, r[, 1]) |> format(scientific = TRUE, digits = 2) ))
+print(paste("Ошибка при вычислении cos(pi/12): ", mse(f_c, r[, 9]) |> format(scientific = TRUE, digits = 2) ))
+
+lines(1:n, r[, 1], col="blue")
+lines(1:n, r[, 9], col="blue")
+
+f_const |> generate_ts(n, C = 1) |>
+  plot(col = "green", ylim = c(-1, 2), ylab = "f_n")
+f_cos |>
+  generate_ts(n, omega = 1/12) |>
+  lines(col="green")
+f_sum |> generate_ts(n) |> lines(lwd = 3, col='red')
+f_n <- f_sum(1:n)
+
+s <- ssa(f_n, L = 96)
+r <- reconstruct(s, groups=list(
+  trend = 1,
+  sesonal = 2:3
+))
+
+
+print("Ошибки при SSA")
+print(paste("Ошибка при вычислении C = 1: ", mse(f_C, r$trend) |> format(scientific = TRUE, digits = 2)  ))
+print(paste("Ошибка при вычислении cos(pi/12): ", mse(f_c, r$sesonal) |> format(scientific = TRUE, digits = 2)))
+
+lines(1:n, r$trend)
+lines(1:n, r$sesonal)
+```
+
+#### Проверка разделимости непериодических компонент + автогруппировка SSA
+
+```{r}
+n <- 96*2-1
+L <- 96
+
+C <- 1
+omega_cs <- 1/12
+omega_sn <- 1/24
+a <- 1/100
+f_sum <- function(x){
+  f_const(x, C = C) +
+    f_cos(x, omega = omega_cs) +
+    f_exp(x, a = a) +
+    f_sin(x, omega = omega_sn)
+}
+
+
+f_C <- f_const |> generate_ts(n, C = C)
+f_c <- f_cos |> generate_ts(n, omega = omega_cs)
+f_s <- f_sin |> generate_ts(n, omega = omega_sn)
+f_e <- f_exp |> generate_ts(n, a = a)
+
+f_n <- f_sum(1:n)
+
+library(xtable)
+
+# Шаг 2: Создание примера данных
+data <- data.frame(
+  Метод = c("SSA", "CiSSA"),
+  e_err = c(20, 20),
+  c_err = c(23, 35),
+  ec_err = c(20, 20),
+  sin_err = c (20, 20),
+  cos_err = c(1, 1)
+)
+
+
+# Отрисовка ряда f_n
+plot(f_n, type = "l", lwd = 3, col = 'red', ylim = c(-2, 10),
+     xlab = "Время", ylab = "Значения ряда", main = "Разложение временного ряда")
+
+# Добавление отдельных компонентов (f_C, f_c, f_e)
+lines(f_C, col = "blue")  # Компонент f_C
+lines(f_c, col = "blue")  # Компонент f_c
+lines(f_e, col = "blue")  # Компонент f_e
+lines(f_s, col = "blue")
+
+# Легенда
+legend("topleft", legend = c("Весь ряд", "Компоненты"), 
+       col = c("red", "blue"), lty = 1, lwd = 3)
+
+
+
+
+
+
+
+
+c <- circulant_SSA(f_n, L = L, extend_flag = TRUE)
+r <- c$t_series
+
+data$cos_err[2] <- mse(f_c, r[, 9]) |> formatC(format = "e", digits = 1)
+data$sin_err[2] <- mse(f_c, r[, 5]) |> formatC(format = "e", digits = 1)
+data$ec_err[2] <- mse(f_C+f_e, r[, 1]) |> formatC(format = "e", digits = 1)
+
+
+# png("C:/Users/nik1m/Desktop/уник/6 сем/курсач/Текст работы/img/trend inseparability/CiSSA.png")  # сохранение в формате PNG
+
+plot(1:n, f_n, type = "l", lwd=3, ylim= c(-2, 10), col="red",
+     xlab = "Время", ylab = "Значения ряда", main = "CiSSA разложение временного ряда")
+lines(1:n, r[, 1], col = "blue")
+lines(1:n, r[, 9], col = "blue")
+lines(1:n, r[, 5], col = "blue")
+
+# Легенда
+legend("topleft", legend = c("Весь ряд", "Компоненты"), 
+       col = c("red", "blue"), lty = 1, lwd = 3)
+
+# dev.off()  # завершение сохранения
+
+
+
+
+
+
+
+
+
+
+s <- ssa(f_n, L)
+e <- eossa(s, 1:10, k = 7)
+
+g_sesonal <- grouping.auto(e, base = "eigen",
+                   freq.bins = list(trend = c(0.001),
+                                    sesonal2 = c(1/25, 1/23),
+                                    sesonal1 = c(1/13, 1/11)
+                                    ),
+                   threshold = 0.1)
+
+
+r <- reconstruct(e, groups=c(list(exp = 1,
+                                C = 2
+                                ),
+                             g_sesonal)
+                 )
+
+plot(wcor(e, groups = 1:24), scales = list(at = c(10, 20, 30)))
+
+data$c_err[1] <- mse(f_C, r$C) |> formatC(format = "e", digits = 1)
+data$e_err[1] <- mse(f_e, r$exp) |> formatC(format = "e", digits = 1)
+data$cos_err[1] <- mse(f_c, r$sesonal1) |> formatC(format = "e", digits = 1)
+data$sin_err[1] <- mse(f_s, r$sesonal2) |> formatC(format = "e", digits = 1)
+data$ec_err[1] <- mse(f_C+f_e, r$C+r$exp) |> formatC(format = "e", digits = 1)
+
+
+# png("C:/Users/nik1m/Desktop/уник/6 сем/курсач/Текст работы/img/trend inseparability/SSA.png")  # сохранение в формате PNG
+
+plot(1:n, f_n, type = "l", lwd=3, ylim= c(-2, 10), col="red",
+     xlab = "Время", ylab = "Значения ряда", main = "SSA разложение временного ряда")
+
+lines(1:n, r$trend, type = "l", col="green")
+lines(1:n, r$exp, type = "l", ylim= c(-2, 10), col="blue")
+lines(1:n, r$C, col = "blue")
+lines(1:n, r$sesonal1, col = "blue")
+lines(1:n, r$sesonal2, col = "blue")
+
+# Легенда
+legend("topleft", legend = c("Весь ряд", "Компоненты"), 
+       col = c("red", "blue"), lty = 1, lwd = 3)
+
+
+
+
+
+
+
+# Шаг 3: Преобразование данных в формат LaTeX
+table_latex <- xtable(data, caption = "Example Table")
+
+# Шаг 4: Вывод таблицы в LaTeX файл
+print(table_latex, include.rownames = FALSE)
+
+
+
+
+
+```
+
+## Данные IP
+
+```{r}
+library(readxl)
+data <- read_excel("Data/International_Financial_Statistics_.xlsx")
+data |> head()
+```
+
+Отрисовка данных IP
+
+```{r}
+dates <- seq(as.Date("1970-01-01"), as.Date("2018-1-30"), by = "month")
+IP_values <- data[2, -c(1, 2)] |> as.double() 
+plot(dates, IP_values, type="l")
+```
+
+#### Cissa
+
+Отрисовка трендовой составляющей чёрным цветом, основной временной ряд — красным
+
+```{r}
+data_slice <- 1:537
+dates_slice <- dates[data_slice]
+IP_values_slice <- IP_values[data_slice]
+
+c <- circulant_SSA(IP_values_slice, L = 192, extend_flag = TRUE)
+r <- c$t_series
+#imp <- c$importance
+#sort_order <- order(imp, decreasing = TRUE)
+#w <- wcor(r[, sort_order], groups=1:30)
+#w <- wcor(r, groups = 1:30)
+#print(w |> dim())
+#w <- w[1:30, 1:30]
+#image(t(w), col = c("white", "black"), axes = FALSE)
+#grid(nx = ncol(w), ny = nrow(w), col = "grey", lty = "solid")
+#plot(w, grid = c(2,4, 5,7))
+#plot(wcor(r[, sort_order], groups = 1:30), scales = list(at = c(10, 20, 30)))
+#print(w)
+
+cissa_trend <- r[,1] + r[,2]
+cissa_cycle <- r[, 3:11] |> rowSums()
+cissa_sesonal <- r[, c(17, 33, 49, 65, 81, 97)] |> rowSums()
+cissa_residuals <- IP_values_slice - (cissa_trend + cissa_cycle + cissa_sesonal)
+
+
+
+plot(dates_slice, IP_values_slice,
+     type="l", col = "black")
+lines(dates_slice, cissa_trend,
+      type="l", col = "red")
+
+plot(dates_slice, cissa_cycle,
+     type="l", col = "red")
+
+plot(dates_slice, cissa_sesonal,
+     type="l", col = "red")
+
+plot(dates_slice, cissa_residuals,
+     type="l", col = "red")
+
+plot(dates_slice, IP_values_slice,
+     type="l", col = "black")
+lines(dates_slice, cissa_trend+cissa_cycle+cissa_sesonal,
+      type="l", col = "red")
+```
+
+#### SSA fossa
+
+```{r}
+s <- ssa(IP_values_slice, L = 192)
+e <- fossa(s)
+# e <- eossa_new(s, nested.groups = list(1:30), clust_type = "distance")
+
+
+groups <- grouping.auto(e,
+                   freq.bins = list(trend = c(1/192),
+                                    cycle = c(1/97, 5/95),
+                                    sesonal = c(1/13, 1/2+0.0001)
+                                    ),
+                   threshold = 0)
+plot(wcor(e, groups = 1:30), scales = list(at = c(10, 20, 30)),
+     main = "W-correlation matrix SSA (fossa)")
+
+r <- reconstruct(e, groups=groups)
+
+ssa_trend_f <- r$trend
+ssa_cycle_f <- r$cycle
+ssa_sesonal_f <- r$sesonal
+ssa_residuals_f <- IP_values_slice - (ssa_trend_f + ssa_cycle_f + ssa_sesonal_f)
+
+plot(dates_slice, IP_values_slice,
+     type="l", col = "black")
+lines(dates_slice, ssa_trend_f,
+      type="l", col = "magenta")
+
+plot(dates_slice, ssa_cycle_f, 
+     type="l", col = "magenta")
+
+plot(dates_slice, ssa_sesonal_f, 
+     type="l", col = "magenta")
+
+plot(dates_slice, ssa_residuals_f,
+     type="l", col = "magenta")
+
+```
+
+#### SSA eossa
+
+```{r}
+library(Rssa)
+source("eossa_new.r")
+s <- ssa(IP_values_slice, L = 192)
+e <- eossa_new(s, nested.groups = list(1:30), clust_type = "distance")
+
+
+
+
+groups <- grouping.auto(e,
+                   freq.bins = list(trend = c(1/192),
+                                    cycle = c(1/97, 5/95),
+                                    sesonal = c(1/13, 1/2+0.0001)
+                                    ),
+                   threshold = 0)
+plot(wcor(e, groups = 1:30), scales = list(at = c(10, 20, 30)),
+     main = "W-correlation matrix SSA (eossa)")
+
+r <- reconstruct(e, groups=groups)
+
+ssa_trend <- r$trend
+ssa_cycle <- r$cycle
+ssa_sesonal <- r$sesonal
+ssa_residuals <- IP_values_slice - (ssa_trend + ssa_cycle + ssa_sesonal)
+
+plot(dates_slice, IP_values_slice,
+     type="l", col = "black")
+lines(dates_slice, ssa_trend,
+      type="l", col = "blue")
+
+plot(dates_slice, ssa_cycle, 
+     type="l", col = "blue")
+
+plot(dates_slice, ssa_sesonal, 
+     type="l", col = "blue")
+
+plot(dates_slice, ssa_residuals,
+     type="l", col = "blue")
+```
+
+```{r}
+plot(dates_slice, IP_values_slice,
+     main = "IP USA тренд",xlab = "Время", ylab = "Значение",
+     type="l", col = "black")
+lines(dates_slice, ssa_trend,
+      type="l", col = "blue", lwd=2)
+lines(dates_slice, ssa_trend_f,
+      type="l", col = "magenta", lwd=2)
+lines(dates_slice, cissa_trend,
+      type="l", col = "red", lwd=2)
+# Легенда
+legend("topleft", legend = c("Весь ряд", "CiSSA тренд", "SSA тренд (eossa)", "SSA тренд (fossa)"), 
+       col = c("black", "red", "blue", "magenta"), lty = 1, lwd = 3)
+
+
+plot(dates_slice, ssa_cycle,
+     main = "IP USA цикличность", xlab = "Время", ylab = "Значение",
+     type="l", col = "blue", ylim=c(-10, 10), lwd=2)
+lines(dates_slice, cissa_cycle,
+      type="l", col = "red", lwd=2)
+lines(dates_slice, ssa_cycle_f,
+      type="l", col = "magenta", lwd=2)
+# Легенда
+legend("topleft", legend = c("CiSSA", "SSA (eossa)", "SSA (fossa)"), 
+       col = c("red", "blue", "magenta"), lty = 1, lwd = 3)
+
+```
+
+```{r}
+# Настройка графиков для отображения двух графиков один под другим с общей осью X
+layout(matrix(c(1, 2), nrow = 2, byrow = TRUE), heights = c(1, 1.2))
+
+# Построение первого графика
+par(mar = c(2, 4, 2, 2)) # Уменьшение нижнего отступа
+plot(dates_slice, ssa_sesonal, type = "l", col = "blue", lwd = 1,
+     main = "SSA (eossa) сезонность", xlab = "", ylab = "Значение")
+# Добавление оси X внизу первого графика, но с пустыми метками
+axis(1, labels = FALSE)
+
+# Построение второго графика
+par(mar = c(5, 4, 2, 2)) # Увеличение нижнего отступа
+plot(dates_slice, ssa_sesonal_f, type = "l", col = "magenta", lwd = 1,
+     main = "SSA (fossa) сезонность", xlab = "Время", ylab = "Значение")
+
+par(mar = c(3, 4, 2, 2)) # Увеличение нижнего отступа
+plot(dates_slice, cissa_sesonal, type = "l", col = "red", lwd = 1,
+     main = "CiSSA сезонность", xlab = "Время", ylab = "Значение")
+
+# Восстановление макета по умолчанию
+layout(1)
+
+
+```
+
+```{r}
+plot(dates_slice, ssa_residuals, 
+     main = "IP USA остаток", xlab = "Время", ylab = "Значение",
+     type="l", col = "blue", ylim=c(-2, 2))
+lines(dates_slice, cissa_residuals,
+      type="l", col = "red")
+lines(dates_slice, ssa_residuals_f,
+      type="l", col = "magenta")
+legend("topleft", legend = c("CiSSA", "SSA (eossa)", "SSA (fossa)"), 
+       col = c("red", "blue", "magenta"), lty = 1, lwd = 3)
+```
+
+```{r}
+ssa_residuals |> density() |> plot()
+cissa_residuals |> density() |> plot()
+```
+
+### Отделение сигнала от шума
+
+```{r}
+
+n_mse_tests <- function(n){
+  n <- 96*2-1
+  L <- 96
+  sigma <- 0.1
+  
+  
+  C <- 1
+  omega_cs <- 1/12
+  omega_sn <- 1/24
+  a <- 1/100
+  f_sum <- function(x){
+    f_const(x, C = C) +
+      f_cos(x, omega = omega_cs) +
+      f_exp(x, a = a) +
+      f_sin(x, omega = omega_sn)
+  }
+  
+  
+  f_C <- f_const |> generate_ts(n, C = C)
+  f_c <- f_cos |> generate_ts(n, omega = omega_cs)
+  f_s <- f_sin |> generate_ts(n, omega = omega_sn)
+  f_e <- f_exp |> generate_ts(n, a = a)
+  
+  mse_lst <- list()
+  for (i in 1:n) {
+    f_noise <- rnorm(n, sd = sigma)
+    
+    f_n <- f_sum(1:n) + f_noise
+    
+    
+    
+    c <- circulant_SSA(f_n, L = L, extend_flag = TRUE)
+    r <- c$t_series
+    
+    mse_lst$cissa <- c(mse_lst$cissa, mse(f_sum(1:n), r[, 9] + r[, 5] + r[, 1])) 
+    
+    
+    
+    
+    
+    s <- ssa(f_n, L)
+    # e <- eossa(s, 1:10, k = 6)
+    e <- fossa(s)
+    
+    g_sesonal <- grouping.auto(e, base = "eigen",
+                       freq.bins = list(trend = 1/1000, 
+                                        sesonal2 = c(1/25, 1/23),
+                                        sesonal1 = c(1/13, 1/10)
+                                        ),
+                       threshold = 0.5)
+    
+    r <- reconstruct(e, groups=c(list(exp = 1, C = 2), g_sesonal))
+    
+    mse_lst$ssa <- 
+      c(mse_lst$ssa, mse(f_sum(1:n), r$trend + r$sesonal2 + r$sesonal1))
+ 
+  }
+  return(mse_lst)
+}
+
+res_mse_test <- n_mse_tests(10000)
+
+```
+
+```{r}
+# Оценка плотности
+density_estimate_cissa <- density(res_mse_test$cissa)
+
+# Построение графика плотности
+plot(density_estimate_cissa, main = "Оценка плотности", 
+     xlab = "Значение", ylab = "Плотность", 
+     col = "blue", lwd = 2)
+
+density_estimate_ssa <- density(res_mse_test$ssa)
+
+# Построение графика плотности
+plot(density_estimate_ssa, main = "Оценка плотности", 
+     xlab = "Значение", ylab = "Плотность", 
+     col = "blue", lwd = 2)
+
+res_mse_test$cissa |> summary()
+res_mse_test$cissa |> sd()
+res_mse_test$ssa |> summary()
+res_mse_test$ssa |> sd()
+```
+
+### Как выполняется расширение ряда
+
+```{r}
+IP_values_slice |> extend(192) |> plot(type="l", lwd = 3)
+c(rep(0, 192),IP_values_slice) |> lines(type="l", col="red")
+
+```
