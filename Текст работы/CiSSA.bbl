@@ -16,11 +16,17 @@ Nina Golyandina, Pavel Dudnik, and Alex Shlemov.
 \newblock Submission received: 31 May 2023; Revised: 4 July 2023; Accepted: 14
   July 2023; Published: 24 July 2023. This article belongs to the Special Issue
   Machine Learning for Time Series Analysis. Author to whom correspondence
-  should be addressed: Nina Golyandina (ORCID: xxxxx).
+  should be addressed: Nina Golyandina.
 
 \bibitem{golyandina2001analysis}
 Nina Golyandina, Vladimir Nekrutkin, and Anatoly Zhigljavsky.
 \newblock {\em Analysis of Time Series Structure: SSA and Related Techniques}.
 \newblock Chapman and Hall/CRC, 2001.
+
+\bibitem{spbu_cissa_coursework_github}
+Nikolay~Pogrebnikov (xSICHx).
+\newblock Spbu cissa coursework: Time series analysis.
+\newblock \url{https://github.com/xSICHx/spbu_cissa_coursework}, 2024.
+\newblock Accessed: 2024-10-23.
 
 \end{thebibliography}
