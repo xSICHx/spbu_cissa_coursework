@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  16 OCT 2024 00:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  23 OCT 2024 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -702,76 +702,76 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 {C:/Users/nik1m/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
 [3] [4] [5] [6]
 
-LaTeX Warning: Command \d invalid in math mode on input line 308.
+LaTeX Warning: Command \d invalid in math mode on input line 332.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--329
+Underfull \hbox (badness 10000) in paragraph at lines 350--353
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--329
+Underfull \hbox (badness 10000) in paragraph at lines 350--353
 
  []
 
 [7] [8]
 
-LaTeX Warning: Citation `' on page 9 undefined on input line 372.
+LaTeX Warning: Citation `' on page 9 undefined on input line 396.
 
-<img/trend inseparability example/all.png, id=201, 497.86pt x 307.549pt>
+<img/trend inseparability example/all.png, id=203, 497.86pt x 307.549pt>
 File: img/trend inseparability example/all.png Graphic file (type png)
 <use img/trend inseparability example/all.png>
 Package pdftex.def Info: img/trend inseparability example/all.png  used on inpu
-t line 400.
+t line 424.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
 [9]
-<img/trend inseparability example/ssa.png, id=206, 497.86pt x 307.549pt>
+<img/trend inseparability example/ssa.png, id=208, 497.86pt x 307.549pt>
 File: img/trend inseparability example/ssa.png Graphic file (type png)
 <use img/trend inseparability example/ssa.png>
 Package pdftex.def Info: img/trend inseparability example/ssa.png  used on inpu
-t line 407.
+t line 431.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/cissa.png, id=207, 497.86pt x 307.549pt>
+<img/trend inseparability example/cissa.png, id=209, 497.86pt x 307.549pt>
 File: img/trend inseparability example/cissa.png Graphic file (type png)
 <use img/trend inseparability example/cissa.png>
 Package pdftex.def Info: img/trend inseparability example/cissa.png  used on in
-put line 414.
+put line 438.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
  [10 <./img/trend inseparability example/all.png> <./img/trend inseparability e
 xample/ssa.png>] [11 <./img/trend inseparability example/cissa.png>]
-Overfull \hbox (23.34993pt too wide) in paragraph at lines 466--467
+Overfull \hbox (23.34993pt too wide) in paragraph at lines 490--491
 []\T2A/cmr/m/n/10.95 Теперь рас-смот-рим ре-аль-ные дан-ные --- ме-сяч-ные ря-д
 ы про-мыш-лен-но-го про-из-вод-ства (Industrial
  []
 
-<img/trend inseparability example/IP_trend.png, id=236, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_trend.png, id=238, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
- input line 470.
+ input line 494.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/IP_cycle.png, id=237, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_cycle.png, id=239, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_cycle.png Graphic file (type png)
 <use img/trend inseparability example/IP_cycle.png>
 Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
- input line 479.
+ input line 503.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
 [12 <./img/trend inseparability example/IP_trend.png>]
-<img/trend inseparability example/IP_sesonal.jpg, id=245, 681.98451pt x 557.802
+<img/trend inseparability example/IP_sesonal.jpg, id=247, 681.98451pt x 557.802
 25pt>
 File: img/trend inseparability example/IP_sesonal.jpg Graphic file (type jpg)
 <use img/trend inseparability example/IP_sesonal.jpg>
 Package pdftex.def Info: img/trend inseparability example/IP_sesonal.jpg  used 
-on input line 488.
+on input line 512.
 (pdftex.def)             Requested size: 375.80542pt x 307.37946pt.
  [13 <./img/trend inseparability example/IP_cycle.png> <./img/trend inseparabil
 ity example/IP_sesonal.jpg>]
-<img/trend inseparability example/W-corr.jpg, id=254, 3310.16957pt x 1469.8293p
+<img/trend inseparability example/W-corr.jpg, id=256, 3310.16957pt x 1469.8293p
 t>
 File: img/trend inseparability example/W-corr.jpg Graphic file (type jpg)
 <use img/trend inseparability example/W-corr.jpg>
 Package pdftex.def Info: img/trend inseparability example/W-corr.jpg  used on i
-nput line 505.
+nput line 529.
 (pdftex.def)             Requested size: 375.80542pt x 166.86253pt.
  [14 <./img/trend inseparability example/W-corr.jpg>] [15] (CiSSA.bbl)
 [16] (CiSSA.aux)
@@ -783,12 +783,12 @@ Package rerunfilecheck Info: File `CiSSA.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  13647 strings out of 475386
- 221763 string characters out of 2776906
- 567272 words of memory out of 3000000
- 34731 multiletter control sequences out of 15000+600000
+ 221879 string characters out of 2776906
+ 567297 words of memory out of 3000000
+ 34732 multiletter control sequences out of 15000+600000
  488336 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,10n,77p,891b,464s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,11n,77p,891b,547s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lati10
 95.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
 bx1200.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
@@ -813,9 +813,9 @@ fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/Local/Programs
 ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/nik
 1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb
 >
-Output written on CiSSA.pdf (16 pages, 874257 bytes).
+Output written on CiSSA.pdf (16 pages, 877266 bytes).
 PDF statistics:
- 730 PDF objects out of 1000 (max. 8388607)
- 78 named destinations out of 1000 (max. 500000)
+ 731 PDF objects out of 1000 (max. 8388607)
+ 77 named destinations out of 1000 (max. 500000)
  156 words of extra memory for PDF output out of 10000 (max. 10000000)
 
