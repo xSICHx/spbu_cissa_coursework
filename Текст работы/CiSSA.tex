@@ -334,7 +334,7 @@ $\TS_{i,j}\,=\,(x_{i-1},\cdot\cdot\cdot,x_{j-1}),\;\;1\,\leq\,i\,\leq\,j\,<\,N.$
 где $U^*$ --- комплексное сопряжение вектора $U$. \sout{По аналогии с базовым методом $\SSA$ определим $V_k = U^*$.}
 
 
-\subsubsection{Группировка}
+\subsubsection{Элементарное разложение}
 
 Для каждой частоты $w_k = \frac{k-1}{L}$, $k = 2:\lfloor \frac{L+1}{2} \rfloor$, есть два собственных вектора: $U_k$ и $U_{L+2-k}$. За частоту $w_0$ отвечает один собственный вектор --- $U_0$. Если же $L$ --- четное, то частоте $w_{\frac{L}{2} + 1}$ будет соответствовать один вектор $U_{\frac{L}{2}+1}$.
 
@@ -432,6 +432,8 @@ A также разложение $\mathbf X_{B_k} = \mathbf X_k + \mathbf X_{L+2-k} = U_k U_k^
 	\label{fig:c_e_cos_ssa}
 \end{figure}
 
+Метод $\SSA$ разделил правильно все компоненты друг от друга.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/trend inseparability example/cissa.png}
@@ -439,16 +441,18 @@ A также разложение $\mathbf X_{B_k} = \mathbf X_k + \mathbf X_{L+2-k} = U_k U_k^
 	\label{fig:c_e_cos_cissa}
 \end{figure}
 
+В случае $\CISSA$ получилось так, что экспонента и константа смешались в одну компоненту.
+
 % latex table generated in R 4.2.2 by xtable 1.8-4 package
 % Wed Jun 12 06:57:37 2024
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{llllllll}
 		\hline
-		Метод &|& e\_err & c\_err & ec\_err &|& sin\_err & cos\_err \\ 
+		Метод/Ошибка &|& exp & const & exp + const &|& sin & cos \\ 
 		\hline
 		SSA & |&2.2e-25 & 2.2e-25 & 4.2e-28 &|&3.8e-29 & 1.6e-29 \\ 
-		CiSSA &| &none & none & 3.5e-02 & |&9.6e-01 & 7.7e-04 \\ 
+		CiSSA &| &none & none & 3.5e-02 & |&1.4e-04 & 1.9e-03 \\ 
 		\hline
 	\end{tabular}
 	\caption{Ошибки разложений методов $\SSA$ и \CISSA} 
