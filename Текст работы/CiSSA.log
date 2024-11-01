@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  1 NOV 2024 05:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  1 NOV 2024 05:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -729,12 +729,12 @@ Overfull \hbox (1.38426pt too wide) in paragraph at lines 108--109
 LaTeX Warning: Command \d invalid in math mode on input line 331.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--352
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--352
+Underfull \hbox (badness 10000) in paragraph at lines 352--355
 
  []
 
@@ -743,24 +743,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 349--352
 File: img/trend inseparability example/all.png Graphic file (type png)
 <use img/trend inseparability example/all.png>
 Package pdftex.def Info: img/trend inseparability example/all.png  used on inpu
-t line 423.
+t line 426.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
  [9]
 <img/trend inseparability example/ssa.png, id=210, 497.86pt x 307.549pt>
 File: img/trend inseparability example/ssa.png Graphic file (type png)
 <use img/trend inseparability example/ssa.png>
 Package pdftex.def Info: img/trend inseparability example/ssa.png  used on inpu
-t line 430.
+t line 433.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
 <img/trend inseparability example/cissa.png, id=211, 497.86pt x 307.549pt>
 File: img/trend inseparability example/cissa.png Graphic file (type png)
 <use img/trend inseparability example/cissa.png>
 Package pdftex.def Info: img/trend inseparability example/cissa.png  used on in
-put line 439.
+put line 442.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
  [10 <./img/trend inseparability example/all.png> <./img/trend inseparability e
 xample/ssa.png>] [11 <./img/trend inseparability example/cissa.png>]
-Overfull \hbox (23.34993pt too wide) in paragraph at lines 493--494
+Overfull \hbox (23.34993pt too wide) in paragraph at lines 496--497
 []\T2A/cmr/m/n/10.95 Теперь рас-смот-рим ре-аль-ные дан-ные --- ме-сяч-ные ря-д
 ы про-мыш-лен-но-го про-из-вод-ства (Industrial
  []
@@ -769,13 +769,13 @@ Overfull \hbox (23.34993pt too wide) in paragraph at lines 493--494
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
- input line 497.
+ input line 500.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
 <img/trend inseparability example/IP_cycle.png, id=241, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_cycle.png Graphic file (type png)
 <use img/trend inseparability example/IP_cycle.png>
 Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
- input line 506.
+ input line 509.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
 [12 <./img/trend inseparability example/IP_trend.png>]
 <img/trend inseparability example/IP_sesonal.jpg, id=249, 681.98451pt x 557.802
@@ -783,7 +783,7 @@ Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
 File: img/trend inseparability example/IP_sesonal.jpg Graphic file (type jpg)
 <use img/trend inseparability example/IP_sesonal.jpg>
 Package pdftex.def Info: img/trend inseparability example/IP_sesonal.jpg  used 
-on input line 515.
+on input line 518.
 (pdftex.def)             Requested size: 375.80542pt x 307.37946pt.
  [13 <./img/trend inseparability example/IP_cycle.png> <./img/trend inseparabil
 ity example/IP_sesonal.jpg>]
@@ -792,7 +792,7 @@ t>
 File: img/trend inseparability example/W-corr.jpg Graphic file (type jpg)
 <use img/trend inseparability example/W-corr.jpg>
 Package pdftex.def Info: img/trend inseparability example/W-corr.jpg  used on i
-nput line 532.
+nput line 535.
 (pdftex.def)             Requested size: 375.80542pt x 166.86253pt.
  [14 <./img/trend inseparability example/W-corr.jpg>] [15] (CiSSA.bbl
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
@@ -808,11 +808,11 @@ Package rerunfilecheck Info: File `CiSSA.out' has not changed.
 Here is how much of TeX's memory you used:
  13572 strings out of 475386
  218405 string characters out of 2776906
- 569104 words of memory out of 3000000
+ 568101 words of memory out of 3000000
  34646 multiletter control sequences out of 15000+600000
  489522 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,11n,77p,891b,547s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,11n,77p,891b,530s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt10
 95.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
 ti1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
@@ -838,7 +838,7 @@ ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nik1m/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
 /nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on CiSSA.pdf (16 pages, 885990 bytes).
+Output written on CiSSA.pdf (16 pages, 886329 bytes).
 PDF statistics:
  760 PDF objects out of 1000 (max. 8388607)
  78 named destinations out of 1000 (max. 500000)
