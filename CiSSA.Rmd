@@ -362,7 +362,7 @@ r <- grouping_cissa(c,
                       sesonal_sin = c(1/26, 1/23)
                     ))
 
-data$cos_err[2] <- mse(f_c, r$sesonal_sin) |> formatC(format = "e", digits = 1)
+data$cos_err[2] <- mse(f_s, r$sesonal_sin) |> formatC(format = "e", digits = 1)
 data$sin_err[2] <- mse(f_c, r$sesonal_cos) |> formatC(format = "e", digits = 1)
 data$ec_err[2] <- mse(f_C+f_e, r$trend) |> formatC(format = "e", digits = 1)
 
@@ -445,6 +445,147 @@ print(table_latex, include.rownames = FALSE)
 
 
 
+
+
+```
+
+#### Пример cos\*exp
+
+```{r}
+n <- 96*2-1
+L <- 96
+eps <- 1/(L+1)
+
+C <- 1
+omega_cs <- 1/12
+omega_sn <- 1/24
+a <- 1/100
+omega_exp <- 1/48
+f_sum <- function(x){
+    f_cos(x, omega = omega_cs) +
+    f_exp_mod_harm_series(x, a = a, omega = omega_exp) +
+    f_sin(x, omega = omega_sn)
+}
+
+
+f_c <- f_cos |> generate_ts(n, omega = omega_cs)
+f_s <- f_sin |> generate_ts(n, omega = omega_sn)
+f_e <- f_exp_mod_harm_series |> generate_ts(n, a = a, omega = omega_exp)
+
+f_n <- f_sum(1:n)
+
+library(xtable)
+
+# Шаг 2: Создание примера данных
+data <- data.frame(
+  Метод = c("SSA", "CiSSA"),
+  exp_err = c(20, 20),
+  sin_err = c (20, 20),
+  cos_err = c(1, 1)
+)
+
+
+# Отрисовка ряда f_n
+plot(f_n, type = "l", lwd = 3, col = 'red', ylim = c(-10, 10),
+     xlab = "Время", ylab = "Значения ряда", main = "Разложение временного ряда")
+
+# Добавление отдельных компонентов (f_C, f_c, f_e)
+lines(f_c, col = "blue")  # Компонент f_c
+lines(f_e, col = "blue")  # Компонент f_e
+lines(f_s, col = "blue")
+
+# Легенда
+legend("topleft", legend = c("Весь ряд", "Компоненты"), 
+       col = c("red", "blue"), lty = 1, lwd = 3)
+
+
+
+
+
+
+
+
+c <- circulant_SSA(f_n, L = L, extend_flag = TRUE)
+# r <- c$t_series
+r <- grouping_cissa(c,
+                    groups = list(
+                      trend = c(0, 1/26-eps),
+                      sesonal_cos = c(1/14, 1/10),
+                      sesonal_sin = c(1/26, 1/23)
+                    ))
+
+data$cos_err[2] <- mse(f_s, r$sesonal_sin) |> formatC(format = "e", digits = 1)
+data$sin_err[2] <- mse(f_c, r$sesonal_cos) |> formatC(format = "e", digits = 1)
+data$exp_err[2] <- mse(f_e, r$trend) |> formatC(format = "e", digits = 1)
+
+
+# png("C:/Users/nik1m/Desktop/уник/6 сем/курсач/Текст работы/img/trend inseparability/CiSSA.png")  # сохранение в формате PNG
+
+plot(1:n, f_n, type = "l", lwd=3, ylim= c(-10, 10), col="red",
+     xlab = "Время", ylab = "Значения ряда", main = "CiSSA разложение временного ряда")
+lines(1:n, r$trend, col = "blue")
+lines(1:n, r$sesonal_sin, col = "blue")
+lines(1:n, r$sesonal_cos, col = "blue")
+
+# Легенда
+legend("topleft", legend = c("Весь ряд", "Компоненты"), 
+       col = c("red", "blue"), lty = 1, lwd = 3)
+
+# dev.off()  # завершение сохранения
+
+
+
+
+
+
+
+
+
+
+s <- ssa(f_n, L)
+e <- eossa_new(s, nested.groups = list(1:30), clust_type = "distance")
+
+g_sesonal <- grouping.auto(e, base = "eigen",
+                   freq.bins = list(trend = c(1/25-eps),
+                                    sesonal2 = c(1/25, 1/23),
+                                    sesonal1 = c(1/13, 1/11)
+                                    ),
+                   threshold = 0.1)
+
+
+r <- reconstruct(e, groups= g_sesonal)
+
+plot(wcor(e, groups = 1:24), scales = list(at = c(10, 20, 30)))
+
+data$exp_err[1] <- mse(f_e, r$trend)  |> formatC(format = "e", digits = 1)
+data$cos_err[1] <- mse(f_c, r$sesonal1) |> formatC(format = "e", digits = 1)
+data$sin_err[1] <- mse(f_s, r$sesonal2) |> formatC(format = "e", digits = 1)
+
+
+# png("C:/Users/nik1m/Desktop/уник/6 сем/курсач/Текст работы/img/trend inseparability/SSA.png")  # сохранение в формате PNG
+
+plot(1:n, f_n, type = "l", lwd=3, ylim= c(-10, 10), col="red",
+     xlab = "Время", ylab = "Значения ряда", main = "SSA разложение временного ряда")
+
+lines(1:n, r$trend, type = "l", col="blue")
+lines(1:n, r$sesonal1, col = "blue")
+lines(1:n, r$sesonal2, col = "blue")
+
+# Легенда
+legend("topleft", legend = c("Весь ряд", "Компоненты"), 
+       col = c("red", "blue"), lty = 1, lwd = 3)
+
+
+
+
+
+
+
+# Шаг 3: Преобразование данных в формат LaTeX
+table_latex <- xtable(data, caption = "Example Table")
+
+# Шаг 4: Вывод таблицы в LaTeX файл
+print(table_latex, include.rownames = FALSE)
 
 
 ```
