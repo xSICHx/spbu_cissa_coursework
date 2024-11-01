@@ -424,14 +424,14 @@ A также разложение $\mathbf X_{B_k} = \mathbf X_k + \mathbf X_{L+2-k} = U_k U_k^
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/trend inseparability example/all.png}
-	\caption{Правильное разложение}
+	\caption{Правильное разложение ряда $\TS = \TS_c + \TS_e + \TS_{\cos} + \TS_{\sin}$}
 	\label{fig:c_e_cos}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/trend inseparability example/ssa.png}
-	\caption{Разложение методом $\SSA$}
+	\caption{Разложение ряда $\TS = \TS_c + \TS_e + \TS_{\cos} + \TS_{\sin}$ методом $\SSA$}
 	\label{fig:c_e_cos_ssa}
 \end{figure}
 
@@ -440,7 +440,7 @@ A также разложение $\mathbf X_{B_k} = \mathbf X_k + \mathbf X_{L+2-k} = U_k U_k^
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.8\textwidth]{img/trend inseparability example/cissa.png}
-	\caption{Разложение методом $\CISSA$}
+	\caption{Разложение ряда $\TS = \TS_c + \TS_e + \TS_{\cos} + \TS_{\sin}$ методом $\CISSA$}
 	\label{fig:c_e_cos_cissa}
 \end{figure}
 
@@ -458,19 +458,36 @@ A также разложение $\mathbf X_{B_k} = \mathbf X_k + \mathbf X_{L+2-k} = U_k U_k^
 		CiSSA &| &none & none & 3.5e-02 & |&1.4e-04 & 1.9e-03 \\ 
 		\hline
 	\end{tabular}
-	\caption{MSE разложений ряда методов $\SSA$ и \CISSA} 
+	\caption{MSE разложений ряда $\TS = \TS_c + \TS_e + \TS_{\cos} + \TS_{\sin}$ методов $\SSA$ и \CISSA} 
 	\label{tab:errs}
 \end{table}
 
 Таблица \ref{tab:errs} и рисунки \ref{fig:c_e_cos_ssa}, \ref{fig:c_e_cos_cissa} показывают, что метод $\SSA$ справился лучше в сравнении с $\CISSA$, причем как по разделимости, так и по ошибке. В алгоритме $\CISSA$ трендовая составляющая также смешалась с сезонной, поэтому увеличилась ошибка при косинусе.
 
-\subsection{Отделение сигнала от шума}
-Рассматривая ряд из предыдущего пункта, добавим к нему гауссовский  шум с стандартным отклонением $0.1$: $\TS = \TS_c + \TS_e + \TS_{\cos} + \TS_{N} = 1 + e^{\frac{x}{100}} + \cos(\frac{2\pi}{12}) + N(0, 0.1)$, $N = 96 \cdot 2 - 1, \, L = 96$. Сделав такой тест $10000$ раз, получим следующий результат по ошибке $\mathrm{MSE}$ между рядом без шума и с шумом:
+Или же, если заменить $\TS_{e}$ на $\TS_{e \cdot \cos}$, то есть теперь ряд $\TS = \TS_c + \TS_{e \cdot \cos} + \TS_{\cos} + \TS_{\sin} = 1 + e^{\frac{x}{100}} \cos(\frac{2\pi}{48} x) + \cos(\frac{2\pi}{12} x) + \sin(\frac{2\pi}{24} x)$, то получится следующая таблица ошибок:
 \begin{table}[ht]
 	\centering
 	\begin{tabular}{llllllll}
 		\hline
-		Метод &|& min & median & mean & max & sd\\ 
+		Метод/Компонента &|& exp $\cdot$ cos & sin & cos \\ 
+		\hline
+		SSA & |&4.7e-29 & 1.1e-29 & 8.4e-30 \\ 
+		CiSSA &| &3.2e-02 & 2.6e-04 & 5.8e-03 \\ 
+		\hline
+	\end{tabular}
+	\caption{MSE разложений ряда $\TS = \TS_c + \TS_{e \cdot \cos} + \TS_{\cos} + \TS_{\sin}$ методов $\SSA$ и \CISSA} 
+	\label{tab:errs_exp_cos}
+\end{table}
+
+Таким образом, таблица \ref{tab:errs_exp_cos} показывает тот же недостаток у метода $\CISSA$, что и таблица \ref{tab:errs}.
+
+\subsection{Отделение сигнала от шума}
+Рассматривая ряд из предыдущего пункта, добавим к нему гауссовский  шум с стандартным отклонением $0.1$: $\TS = \TS_c + \TS_e + \TS_{\cos} + \TS_{\sin} +\TS_{\mathrm{noise}} = 1 + e^{\frac{x}{100}} + \cos(\frac{2\pi}{12} x) + \sin(\frac{2\pi}{24} x) + \mathrm N(0, 0.1)$, $N = 96 \cdot 2 - 1, \, L = 96$. Сделав такой тест $10000$ раз, получим следующий результат по ошибке $\mathrm{MSE}$ между рядом без шума и с шумом:
+\begin{table}[ht]
+	\centering
+	\begin{tabular}{llllllll}
+		\hline
+		Метод/Статистики &|& min & median & mean & max & sd\\ 
 		\hline
 		
 		SSA &|& 5.8e-04 & 2.0e-03 & 2.1e-03 & 4.9e-03 & 6.2e-04\\ 
