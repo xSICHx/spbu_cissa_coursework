@@ -143,5 +143,35 @@ circulant_SSA <- function(ts, L = NULL, extend_flag = FALSE){
     Z[, nft] <- R[, nft]
     imp[nft] <- psd[nft] / lambda_sm
   }
-  list(t_series = Z[(H+1):(N+H),], importance = imp)
+  
+  list(t_series = Z[(H+1):(N+H),],
+       importance = imp,
+       freq = (0:(length(imp) -1))/L
+  )
+}
+
+
+# groups - list of frequencies
+grouping_cissa <- function(cissa_res, groups){
+  freq <- cissa_res$freq
+  t_series <- cissa_res$t_series
+  
+  residuals <- 0
+  result <- setNames(as.list(rep(0, length(groups))), names(groups))
+  for (i in 1:length(cissa_res$freq)){
+    flag <- FALSE
+    for (name in names(groups)){
+      if (groups[[name]][1] <= freq[i] & freq[i] <= groups[[name]][2]){
+        flag <- TRUE
+        result[[name]] <- result[[name]] + t_series[, i]
+      }
+    }
+    
+    if (flag == FALSE){
+      residuals <- residuals + t_series[, i]
+    }
+  }
+  
+  result[["residuals"]] <- residuals
+  result
 }

@@ -162,7 +162,38 @@ circulant_SSA <- function(ts, L = NULL, extend_flag = FALSE){
     Z[, nft] <- R[, nft]
     imp[nft] <- psd[nft] / lambda_sm
   }
-  list(t_series = Z[(H+1):(N+H),], importance = imp)
+  
+  list(t_series = Z[(H+1):(N+H),],
+       importance = imp,
+       freq = (0:(length(imp) -1))/L
+       )
+}
+```
+
+```{r}
+# groups - list of frequencies
+grouping_cissa <- function(cissa_res, groups){
+  freq <- cissa_res$freq
+  t_series <- cissa_res$t_series
+  
+  residuals <- 0
+  result <- setNames(as.list(rep(0, length(groups))), names(groups))
+  for (i in 1:length(cissa_res$freq)){
+    flag <- FALSE
+    for (name in names(groups)){
+      if (groups[[name]][1] <= freq[i] & freq[i] <= groups[[name]][2]){
+        flag <- TRUE
+        result[[name]] <- result[[name]] + t_series[, i]
+      }
+    }
+    
+    if (flag == FALSE){
+      residuals <- residuals + t_series[, i]
+    }
+  }
+  
+  result[["residuals"]] <- residuals
+  result
 }
 ```
 
@@ -224,16 +255,21 @@ f_n <- f_sum(1:n)
 
 
 c <- circulant_SSA(f_n, L = 96, extend_flag = FALSE)
-r <- c$t_series
+r <- grouping_cissa(c,
+               groups = list(
+                 trend = c(0, 1/100),
+                 sesonal = c(1/99, 1/10)
+               )
+               )
 
 f_C <- f_const |> generate_ts(n, C = 1)
 f_c <- f_cos |> generate_ts(n, omega = 1/12)
 print("Ошибки при CiSSA")
-print(paste("Ошибка при вычислении C = 1: ", mse(f_C, r[, 1]) |> format(scientific = TRUE, digits = 2) ))
-print(paste("Ошибка при вычислении cos(pi/12): ", mse(f_c, r[, 9]) |> format(scientific = TRUE, digits = 2) ))
+print(paste("Ошибка при вычислении C = 1: ", mse(f_C, r$trend) |> format(scientific = TRUE, digits = 2) ))
+print(paste("Ошибка при вычислении cos(pi/12): ", mse(f_c, r$sesonal) |> format(scientific = TRUE, digits = 2) ))
 
-lines(1:n, r[, 1], col="blue")
-lines(1:n, r[, 9], col="blue")
+lines(1:n, r$trend, col="blue")
+lines(1:n, r$sesonal, col="blue")
 
 f_const |> generate_ts(n, C = 1) |>
   plot(col = "green", ylim = c(-1, 2), ylab = "f_n")
@@ -318,20 +354,26 @@ legend("topleft", legend = c("Весь ряд", "Компоненты"),
 
 
 c <- circulant_SSA(f_n, L = L, extend_flag = TRUE)
-r <- c$t_series
+# r <- c$t_series
+r <- grouping_cissa(c,
+                    groups = list(
+                      trend = c(0, 1/100),
+                      sesonal_cos = c(1/14, 1/10),
+                      sesonal_sin = c(1/26, 1/23)
+                    ))
 
-data$cos_err[2] <- mse(f_c, r[, 9]) |> formatC(format = "e", digits = 1)
-data$sin_err[2] <- mse(f_c, r[, 5]) |> formatC(format = "e", digits = 1)
-data$ec_err[2] <- mse(f_C+f_e, r[, 1]) |> formatC(format = "e", digits = 1)
+data$cos_err[2] <- mse(f_c, r$sesonal_sin) |> formatC(format = "e", digits = 1)
+data$sin_err[2] <- mse(f_c, r$sesonal_cos) |> formatC(format = "e", digits = 1)
+data$ec_err[2] <- mse(f_C+f_e, r$trend) |> formatC(format = "e", digits = 1)
 
 
 # png("C:/Users/nik1m/Desktop/уник/6 сем/курсач/Текст работы/img/trend inseparability/CiSSA.png")  # сохранение в формате PNG
 
 plot(1:n, f_n, type = "l", lwd=3, ylim= c(-2, 10), col="red",
      xlab = "Время", ylab = "Значения ряда", main = "CiSSA разложение временного ряда")
-lines(1:n, r[, 1], col = "blue")
-lines(1:n, r[, 9], col = "blue")
-lines(1:n, r[, 5], col = "blue")
+lines(1:n, r$trend, col = "blue")
+lines(1:n, r$sesonal_sin, col = "blue")
+lines(1:n, r$sesonal_cos, col = "blue")
 
 # Легенда
 legend("topleft", legend = c("Весь ряд", "Компоненты"), 
@@ -431,26 +473,36 @@ plot(dates, IP_values, type="l")
 data_slice <- 1:537
 dates_slice <- dates[data_slice]
 IP_values_slice <- IP_values[data_slice]
+eps <- 1/193
 
 c <- circulant_SSA(IP_values_slice, L = 192, extend_flag = TRUE)
 r <- c$t_series
-#imp <- c$importance
-#sort_order <- order(imp, decreasing = TRUE)
-#w <- wcor(r[, sort_order], groups=1:30)
-#w <- wcor(r, groups = 1:30)
-#print(w |> dim())
-#w <- w[1:30, 1:30]
-#image(t(w), col = c("white", "black"), axes = FALSE)
-#grid(nx = ncol(w), ny = nrow(w), col = "grey", lty = "solid")
-#plot(w, grid = c(2,4, 5,7))
-#plot(wcor(r[, sort_order], groups = 1:30), scales = list(at = c(10, 20, 30)))
-#print(w)
+r <- grouping_cissa(c,
+                    groups = list(
+                      trend = c(0, 1/192),
+                      cycle = c(1/97, 5/95),
+                      sesonal = c(1/13, 1/2+0.0001)
+                    )
+                    )
+r_sesonal <-  grouping_cissa(c,
+                             groups = list(
+                              s1 = c(16/192 - eps, 16/192 + eps),
+                              s2 = c(32/192 - eps, 32/192 + eps),
+                              s3 = c(48/192 - eps, 48/192 + eps),
+                              s4 = c(64/192 - eps, 64/192 + eps),
+                              s5 = c(80/192 - eps, 80/192 + eps),
+                              s6 = c(96/192 - eps, 96/192 + eps)
+                             )
+                             )
+# cissa_trend <- r[,1] + r[,2]
+# cissa_cycle <- r[, 3:11] |> rowSums()
+# cissa_sesonal <- r[, c(17, 33, 49, 65, 81, 97)] |> rowSums()
+# cissa_residuals <- IP_values_slice - (cissa_trend + cissa_cycle + cissa_sesonal)
 
-cissa_trend <- r[,1] + r[,2]
-cissa_cycle <- r[, 3:11] |> rowSums()
-cissa_sesonal <- r[, c(17, 33, 49, 65, 81, 97)] |> rowSums()
+cissa_trend <- r$trend
+cissa_cycle <- r$cycle
+cissa_sesonal <- Reduce("+", r_sesonal |> within(rm(residuals)))
 cissa_residuals <- IP_values_slice - (cissa_trend + cissa_cycle + cissa_sesonal)
-
 
 
 plot(dates_slice, IP_values_slice,
@@ -479,14 +531,21 @@ lines(dates_slice, cissa_trend+cissa_cycle+cissa_sesonal,
 s <- ssa(IP_values_slice, L = 192)
 e <- fossa(s)
 # e <- eossa_new(s, nested.groups = list(1:30), clust_type = "distance")
-
+eps <- 1/193
 
 groups <- grouping.auto(e,
                    freq.bins = list(trend = c(1/192),
                                     cycle = c(1/97, 5/95),
-                                    sesonal = c(1/13, 1/2+0.0001)
+                                    s1 = c(16/192 - eps, 16/192 + eps),
+                                    s2 = c(32/192 - eps, 32/192 + eps),
+                                    s3 = c(48/192 - eps, 48/192 + eps),
+                                    s4 = c(64/192 - eps, 64/192 + eps),
+                                    s5 = c(80/192 - eps, 80/192 + eps),
+                                    s6 = c(96/192 - eps, 96/192 + eps)
                                     ),
                    threshold = 0)
+
+
 plot(wcor(e, groups = 1:30), scales = list(at = c(10, 20, 30)),
      main = "W-correlation matrix SSA (fossa)")
 
@@ -494,7 +553,7 @@ r <- reconstruct(e, groups=groups)
 
 ssa_trend_f <- r$trend
 ssa_cycle_f <- r$cycle
-ssa_sesonal_f <- r$sesonal
+ssa_sesonal_f <- r$s1 + r$s2 + r$s3 + r$s4 + r$s5 + r$s6
 ssa_residuals_f <- IP_values_slice - (ssa_trend_f + ssa_cycle_f + ssa_sesonal_f)
 
 plot(dates_slice, IP_values_slice,
@@ -527,7 +586,12 @@ e <- eossa_new(s, nested.groups = list(1:30), clust_type = "distance")
 groups <- grouping.auto(e,
                    freq.bins = list(trend = c(1/192),
                                     cycle = c(1/97, 5/95),
-                                    sesonal = c(1/13, 1/2+0.0001)
+                                    s1 = c(16/192 - eps, 16/192 + eps),
+                                    s2 = c(32/192 - eps, 32/192 + eps),
+                                    s3 = c(48/192 - eps, 48/192 + eps),
+                                    s4 = c(64/192 - eps, 64/192 + eps),
+                                    s5 = c(80/192 - eps, 80/192 + eps),
+                                    s6 = c(96/192 - eps, 96/192 + eps)
                                     ),
                    threshold = 0)
 plot(wcor(e, groups = 1:30), scales = list(at = c(10, 20, 30)),
@@ -537,7 +601,7 @@ r <- reconstruct(e, groups=groups)
 
 ssa_trend <- r$trend
 ssa_cycle <- r$cycle
-ssa_sesonal <- r$sesonal
+ssa_sesonal <- r$s1 + r$s2 + r$s3 + r$s4 + r$s5 + r$s6
 ssa_residuals <- IP_values_slice - (ssa_trend + ssa_cycle + ssa_sesonal)
 
 plot(dates_slice, IP_values_slice,
@@ -662,10 +726,16 @@ n_mse_tests <- function(n){
     
     
     c <- circulant_SSA(f_n, L = L, extend_flag = TRUE)
-    r <- c$t_series
+    # r <- c$t_series
+    r <- grouping_cissa(c, groups= list(trend = c(0, 1/1000), 
+                                        sesonal2 = c(1/25, 1/23),
+                                        sesonal1 = c(1/13, 1/10)
+                                        ))
     
-    mse_lst$cissa <- c(mse_lst$cissa, mse(f_sum(1:n), r[, 9] + r[, 5] + r[, 1])) 
-    
+    # mse_lst$cissa <- c(mse_lst$cissa, mse(f_sum(1:n), r[, 9] + r[, 5] + r[, 1])) 
+    mse_lst$cissa <- c(mse_lst$cissa,
+                       mse(f_sum(1:n),
+                           r$trend + r$sesonal1 + r$sesonal2)) 
     
     
     
