@@ -150,7 +150,7 @@ circulant_SSA <- function(ts, L = NULL, extend_flag = FALSE){
   )
 }
 
-
+ 
 # groups - list of frequencies
 grouping_cissa <- function(cissa_res, groups){
   freq <- cissa_res$freq
