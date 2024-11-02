@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  2 NOV 2024 19:21
+=======
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  1 NOV 2024 06:47
+>>>>>>> 4ccc90ba385c874c4c65e12305321363c68d2dcc
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -839,7 +843,11 @@ ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nik1m/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
 /nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
+<<<<<<< HEAD
 Output written on CiSSA.pdf (17 pages, 889445 bytes).
+=======
+Output written on CiSSA.pdf (17 pages, 889443 bytes).
+>>>>>>> 4ccc90ba385c874c4c65e12305321363c68d2dcc
 PDF statistics:
  768 PDF objects out of 1000 (max. 8388607)
  80 named destinations out of 1000 (max. 500000)
