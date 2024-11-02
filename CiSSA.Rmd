@@ -10,6 +10,7 @@ output: html_notebook
 library(Rssa)
 library(signal)
 library(gsignal)
+source("eossa_new.R")
 
 
 dftmtx <- function(n) {
@@ -357,7 +358,8 @@ c <- circulant_SSA(f_n, L = L, extend_flag = TRUE)
 # r <- c$t_series
 r <- grouping_cissa(c,
                     groups = list(
-                      trend = c(0, 1/100),
+                      # trend = c(0, 1/100),
+                      trend = c(0, 1/1000),
                       sesonal_cos = c(1/14, 1/10),
                       sesonal_sin = c(1/26, 1/23)
                     ))
@@ -401,7 +403,7 @@ g_sesonal <- grouping.auto(e, base = "eigen",
                    threshold = 0.1)
 
 
-r <- reconstruct(e, groups=c(list(exp = 1,
+r <- Rssa::reconstruct(e, groups=c(list(exp = 1,
                                 C = 2
                                 ),
                              g_sesonal)
@@ -834,6 +836,7 @@ cissa_residuals |> density() |> plot()
 ### Отделение сигнала от шума
 
 ```{r}
+set.seed(100)
 
 n_mse_tests <- function(n){
   n <- 96*2-1
@@ -932,5 +935,58 @@ res_mse_test$ssa |> sd()
 ```{r}
 IP_values_slice |> extend(192) |> plot(type="l", lwd = 3)
 c(rep(0, 192),IP_values_slice) |> lines(type="l", col="red")
+
+```
+
+### Фурье преобразование
+
+```{r}
+n <- 96*2-1
+L <- 96
+x <- 1:n
+y1 <- sin(2*pi/12 * x)
+y2 <- cos(2*pi/24 * x)
+y3 <- rep(2, n)
+
+# Создаем общий временной ряд
+y <- y1 + y2 + y3
+
+# Выполняем быстрое преобразование Фурье
+fft_y <- fft(y)
+
+# Получаем амплитуды и фазы
+amplitudes <- Mod(fft_y)
+phases <- Arg(fft_y)
+
+# Индексы для частот
+n <- length(y)
+frequencies <- (0:(L)) / L
+
+
+# Функция для восстановления компонент
+reconstruct_fft <- function(frequencies, amplitudes, phases, threshold) {
+  reconstructed <- list()
+  for (i in 1:length(amplitudes)) {
+    if (amplitudes[i] > threshold) {
+      reconstructed[[i]] <- amplitudes[i] * cos(2 * pi * frequencies[i] * x + phases[i])
+    }
+  }
+  return(reconstructed)
+}
+
+
+# Восстанавливаем компоненты (можно задать порог для выделения значительных частот)
+threshold <- 0
+y_reconstructed <- reconstruct_fft(frequencies, amplitudes, phases, threshold)
+
+c <- circulant_SSA(y, L = L, extend_flag = FALSE)
+r <- c$t_series
+
+# plot(x, Reduce("+", y_reconstructed) )
+# plot(x, y)
+for (i in 1:100){
+  plot(x, y_reconstructed[[i]], main= paste(frequencies[i]))
+  
+}
 
 ```
