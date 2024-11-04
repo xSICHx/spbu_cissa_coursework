@@ -177,6 +177,7 @@ grouping_cissa <- function(cissa_res, groups){
   freq <- cissa_res$freq
   t_series <- cissa_res$t_series
   
+  
   residuals <- 0
   result <- setNames(as.list(rep(0, length(groups))), names(groups))
   for (i in 1:length(cissa_res$freq)){
@@ -833,7 +834,7 @@ ssa_residuals |> density() |> plot()
 cissa_residuals |> density() |> plot()
 ```
 
-### Отделение сигнала от шума
+## Отделение сигнала от шума
 
 ```{r}
 set.seed(100)
@@ -930,7 +931,7 @@ res_mse_test$ssa |> summary()
 res_mse_test$ssa |> sd()
 ```
 
-### Как выполняется расширение ряда
+## Как выполняется расширение ряда
 
 ```{r}
 IP_values_slice |> extend(192) |> plot(type="l", lwd = 3)
@@ -938,9 +939,9 @@ c(rep(0, 192),IP_values_slice) |> lines(type="l", col="red")
 
 ```
 
-### CiSSA через Фурье
+## CiSSA через Фурье
 
-#### IP_values
+### IP_values
 
 ```{r}
 cissa_like_fourier_transform <- function(ts, L){
@@ -958,7 +959,10 @@ cissa_like_fourier_transform <- function(ts, L){
         cos(2 * pi * frequencies[i] * (x) + phases[i]) /
         n
     }
-    return(reconstructed)
+    return(list(
+      ts = reconstructed,
+      frequencies = frequencies
+      ))
   }
   
   n <- length(ts)
@@ -975,7 +979,7 @@ cissa_like_fourier_transform <- function(ts, L){
   for (i in 1:K){
     y <- X[, i]
     x <- x_main[1:(1 + L - 1)]
-    res[[i]] <- reconstruct_fft(x, y, frequencies)
+    res[[i]] <- reconstruct_fft(x, y, frequencies)$ts
   }
   
   # for (i in 1:L){
@@ -1054,4 +1058,97 @@ for (i in 1:dim(r)[2]){
   plot(data_slice, r_ft[, i], col= "red", type = "l", lwd = 2)
   lines(data_slice, r[, i])
 }
+```
+
+### Сравнение разложений всего временного ряда через метод Фурье и CiSSA
+
+```{r}
+reconstruct_fft <- function(x, y) {
+    frequencies <- (0:(length(x)-1)) / length(x)
+    fft_y <- fft(y)
+    
+    amplitudes <- Mod(fft_y)
+    phases <- Arg(fft_y)
+    
+    reconstructed <- matrix(0, length(amplitudes), length(x))
+    n <- length(amplitudes)
+    L <- n
+    for (i in 1:(length(amplitudes))) {
+      reconstructed[i, ] <-
+        amplitudes[i] * 
+        cos(2 * pi * frequencies[i] * (x) + phases[i]) /
+        n
+    }
+    
+    
+    
+  
+    group_by_elementary_freq_foureir <- function(res_averaged){
+      nf2 <- 0
+      if (L %% 2) {
+        nf2 <- (L + 1) / 2 - 1
+      } else {
+        nf2 <- L / 2 - 1
+      }
+      nft <- nf2 + abs((L %% 2) - 2)
+      
+      Z <- matrix(0, ncol = nft, nrow = n)
+      
+      # print(Z |> dim())
+      # print(res_averaged |> dim())
+      
+      Z[, 1] <- res_averaged[1, ]
+      for (k in 1:nf2) {
+        Z[, k + 1] <- res_averaged[k + 1, ] + res_averaged[L + 2 - (k + 1), ]
+      }
+      if (L %% 2 != 0) {
+        Z[, nft] <- res_averaged[nft, ]
+      }
+      
+      
+      return(list(
+        t_series = Z,
+        freq = (0:dim(Z)[2])/L
+      ))
+    }
+  
+  
+    rs <- group_by_elementary_freq_foureir(reconstructed)
+    
+    
+    return(list(
+      t_series = t(rs$t_series),
+      freq = rs$freq
+      ))
+  }
+```
+
+```{r}
+n <- 96*2
+x <- 0:(n-1)
+y1 <- sin(2*pi/12 * x)
+y2 <- cos(2*pi/8 * x)
+y <- y1 + y2
+eps <- 1/(n+1)
+
+r_fft <- reconstruct_fft(x, y)
+r_fft_ts <- r_fft$ts
+r_fft_grouped <- grouping_cissa(r_fft,
+                    groups = list(
+                      sesonal_sin = c(1/12-eps, 1/12+eps),
+                      sesonal_cos = c(1/8-eps, 1/8+eps)
+                    )
+                    )
+
+r_fft_grouped$sesonal_sin |> length()
+
+plot(x, r_fft_grouped$sesonal_sin)
+plot(x, r_fft_grouped$sesonal_cos)
+plot(x, r_fft_grouped$residuals)
+
+# 
+# L <- 96
+# r_cissa <- circulant_SSA(y, L)
+
+
 ```
