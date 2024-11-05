@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  5 NOV 2024 14:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  6 NOV 2024 01:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -482,7 +482,46 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip57
 \dth@everypar=\toks33
 )
-(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2024/10/28 v0.6c Insert pages of external PDF documents (AM)
+
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count279
+\calc@Bcount=\count280
+\calc@Adimen=\dimen166
+\calc@Bdimen=\dimen167
+\calc@Askip=\skip58
+\calc@Bskip=\skip59
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count281
+\calc@Cskip=\skip60
+)
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+\ESO@tempdima=\dimen168
+\ESO@tempdimb=\dimen169
+)
+\AM@pagewidth=\dimen170
+\AM@pageheight=\dimen171
+\AM@fboxrule=\dimen172
+
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2024/10/28 v0.6c Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count282
+\AM@pagebox=\box60
+\AM@global@opts=\toks34
+\AM@pagecnt=\count283
+\AM@toc@title=\toks35
+\AM@lof@heading=\toks36
+\c@AM@survey=\count284
+\AM@templatesizebox=\box61
+) (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2022-09-22 v7.00t Hypertext links for LaTeX
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
@@ -537,11 +576,11 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count279
+\c@section@level=\count285
 )
-\@linkdim=\dimen166
-\Hy@linkcounter=\count280
-\Hy@pagecounter=\count281
+\@linkdim=\dimen173
+\Hy@linkcounter=\count286
+\Hy@pagecounter=\count287
  (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2022-09-22 v7.00t Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
@@ -552,7 +591,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count282
+\Hy@SavedSpaceFactor=\count288
  (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2022-09-22 v7.00t Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
@@ -567,14 +606,14 @@ Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4410.
-\c@Hy@tempcnt=\count283
+\c@Hy@tempcnt=\count289
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4748.
-\XeTeXLinkMargin=\dimen167
+\XeTeXLinkMargin=\dimen174
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -584,9 +623,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count284
-\Field@Width=\dimen168
-\Fld@charsize=\dimen169
+\Fld@menulength=\count290
+\Field@Width=\dimen175
+\Fld@charsize=\dimen176
 Package hyperref Info: Hyper figures OFF on input line 6027.
 Package hyperref Info: Link nesting OFF on input line 6032.
 Package hyperref Info: Hyper index ON on input line 6035.
@@ -599,9 +638,9 @@ Package hyperref Info: PDF/A mode OFF on input line 6057.
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count285
-\c@Item=\count286
-\c@Hfootnote=\count287
+\Hy@abspage=\count291
+\c@Item=\count292
+\c@Hfootnote=\count293
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
@@ -612,8 +651,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count288
-\c@bookmark@seq@number=\count289
+\Fld@listcount=\count294
+\c@bookmark@seq@number=\count295
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfil
 echeck.sty
@@ -626,16 +665,16 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip58
+\Hy@SectionHShift=\skip61
 )
-\c@definition=\count290
-\c@theorem=\count291
+\c@definition=\count296
+\c@theorem=\count297
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
 File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count292
-\l__pdf_internal_box=\box60
+\l__color_backend_stack_int=\count298
+\l__pdf_internal_box=\box62
 ) (CiSSA.aux
 LaTeX Font Info:    Trying to load font information for T2A+cmr on input line 1
 9.
@@ -645,42 +684,42 @@ File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 \openout1 = `CiSSA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Info: Redefining \th on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 47.
+LaTeX Font Info:    ... okay on input line 47.
+LaTeX Info: Redefining \th on input line 47.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count293
-\scratchdimen=\dimen170
-\scratchbox=\box61
-\nofMPsegments=\count294
-\nofMParguments=\count295
-\everyMPshowfont=\toks34
-\MPscratchCnt=\count296
-\MPscratchDim=\dimen171
-\MPnumerator=\count297
-\makeMPintoPDFobject=\count298
-\everyMPtoPDFconversion=\toks35
+\scratchcounter=\count299
+\scratchdimen=\dimen177
+\scratchbox=\box63
+\nofMPsegments=\count300
+\nofMParguments=\count301
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen178
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
+\everyMPtoPDFconversion=\toks38
 )
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -696,12 +735,60 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 46.
- (CiSSA.out) (CiSSA.out)
+
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape.sty
+Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
+
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/pdflscape\pdflscape-nom
+etadata.sty
+Package: pdflscape-nometadata 2022-10-28 v0.13 Display of landscape pages in PD
+F (HO)
+
+(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+Package hyperref Info: Link coloring ON on input line 47.
+
+(CiSSA.out) (CiSSA.out)
 \@outlinefile=\write3
 \openout3 = `CiSSA.out'.
 
- (CiSSA.toc
+<../Title/report.pdf, id=63, 597.50829pt x 845.0471pt>
+File: ../Title/report.pdf Graphic file (type pdf)
+<use ../Title/report.pdf>
+Package pdftex.def Info: ../Title/report.pdf  used on input line 50.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: ../Title/report.pdf Graphic file (type pdf)
+<use ../Title/report.pdf>
+Package pdftex.def Info: ../Title/report.pdf  used on input line 50.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+<../Title/report.pdf, id=66, page=1, 597.50829pt x 845.0471pt>
+File: ../Title/report.pdf Graphic file (type pdf)
+<use ../Title/report.pdf, page 1>
+Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
+File: ../Title/report.pdf Graphic file (type pdf)
+<use ../Title/report.pdf, page 1>
+Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: ../Title/report.pdf Graphic file (type pdf)
+<use ../Title/report.pdf, page 1>
+Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: ../Title/report.pdf Graphic file (type pdf)
+<use ../Title/report.pdf, page 1>
+Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+File: ../Title/report.pdf Graphic file (type pdf)
+<use ../Title/report.pdf, page 1>
+Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 50.
+(pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
+ [1
+
+
+ <../Title/report.pdf>] (CiSSA.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
@@ -716,104 +803,102 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout4 = `CiSSA.toc'.
 
 
-[1
-
-{C:/Users/nik1m/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Overfull \hbox (1.38426pt too wide) in paragraph at lines 108--109
+[2{C:/Users/nik1m/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [3]
+Overfull \hbox (1.38426pt too wide) in paragraph at lines 110--111
 \T2A/cmr/m/n/10.95 –езультатом это-го ша-га €в-л€-ет-с€ син-гу-л€р-ное раз-ло-ж
 е-ние (Singular Value Decomposition, $[]$)
  []
 
-[3] [4] [5] [6]
+[4] [5] [6] [7]
 
-LaTeX Warning: Command \d invalid in math mode on input line 331.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
-
- []
+LaTeX Warning: Command \d invalid in math mode on input line 333.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--357
+Underfull \hbox (badness 10000) in paragraph at lines 356--360
 
  []
 
-[7] [8] [9] [10]
-<img/trend inseparability example/all.png, id=226, 497.86pt x 307.549pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--360
+
+ []
+
+[8] [9] [10] [11]
+<img/trend inseparability example/all.png, id=321, 497.86pt x 307.549pt>
 File: img/trend inseparability example/all.png Graphic file (type png)
 <use img/trend inseparability example/all.png>
 Package pdftex.def Info: img/trend inseparability example/all.png  used on inpu
-t line 522.
+t line 547.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
- [11]
-<img/trend inseparability example/ssa.png, id=232, 497.86pt x 307.549pt>
+ [12]
+<img/trend inseparability example/ssa.png, id=327, 497.86pt x 307.549pt>
 File: img/trend inseparability example/ssa.png Graphic file (type png)
 <use img/trend inseparability example/ssa.png>
 Package pdftex.def Info: img/trend inseparability example/ssa.png  used on inpu
-t line 529.
+t line 554.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/cissa.png, id=233, 497.86pt x 307.549pt>
+<img/trend inseparability example/cissa.png, id=328, 497.86pt x 307.549pt>
 File: img/trend inseparability example/cissa.png Graphic file (type png)
 <use img/trend inseparability example/cissa.png>
 Package pdftex.def Info: img/trend inseparability example/cissa.png  used on in
-put line 538.
+put line 563.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
- [12 <./img/trend inseparability example/all.png> <./img/trend inseparability e
-xample/ssa.png>] [13 <./img/trend inseparability example/cissa.png>]
-Overfull \hbox (23.34993pt too wide) in paragraph at lines 609--610
+ [13 <./img/trend inseparability example/all.png> <./img/trend inseparability e
+xample/ssa.png>] [14 <./img/trend inseparability example/cissa.png>]
+Overfull \hbox (23.34993pt too wide) in paragraph at lines 634--635
 []\T2A/cmr/m/n/10.95 “еперь рас-смот-рим ре-аль-ные дан-ные --- ме-с€ч-ные р€-д
 ы про-мыш-лен-но-го про-из-вод-ства (Industrial
  []
 
-<img/trend inseparability example/IP_trend.png, id=267, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_trend.png, id=362, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
- input line 613.
+ input line 638.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-[14]
-<img/trend inseparability example/IP_cycle.png, id=273, 497.86pt x 307.549pt>
+[15]
+<img/trend inseparability example/IP_cycle.png, id=368, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_cycle.png Graphic file (type png)
 <use img/trend inseparability example/IP_cycle.png>
 Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
- input line 622.
+ input line 647.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/IP_sesonal.jpg, id=274, 681.98451pt x 557.802
+<img/trend inseparability example/IP_sesonal.jpg, id=369, 681.98451pt x 557.802
 25pt>
 File: img/trend inseparability example/IP_sesonal.jpg Graphic file (type jpg)
 <use img/trend inseparability example/IP_sesonal.jpg>
 Package pdftex.def Info: img/trend inseparability example/IP_sesonal.jpg  used 
-on input line 631.
+on input line 656.
 (pdftex.def)             Requested size: 375.80542pt x 307.37946pt.
- [15 <./img/trend inseparability example/IP_trend.png> <./img/trend inseparabil
+ [16 <./img/trend inseparability example/IP_trend.png> <./img/trend inseparabil
 ity example/IP_cycle.png>]
-<img/trend inseparability example/W-corr.jpg, id=283, 3310.16957pt x 1469.8293p
+<img/trend inseparability example/W-corr.jpg, id=378, 3310.16957pt x 1469.8293p
 t>
 File: img/trend inseparability example/W-corr.jpg Graphic file (type jpg)
 <use img/trend inseparability example/W-corr.jpg>
 Package pdftex.def Info: img/trend inseparability example/W-corr.jpg  used on i
-nput line 648.
+nput line 673.
 (pdftex.def)             Requested size: 375.80542pt x 166.86253pt.
- [16 <./img/trend inseparability example/IP_sesonal.jpg> <./img/trend inseparab
-ility example/W-corr.jpg>] [17] [18] (CiSSA.bbl
+ [17 <./img/trend inseparability example/IP_sesonal.jpg> <./img/trend inseparab
+ility example/W-corr.jpg>] [18] [19] (CiSSA.bbl
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
 29.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-[19] (CiSSA.aux)
+[20] (CiSSA.aux)
 Package rerunfilecheck Info: File `CiSSA.out' has not changed.
 (rerunfilecheck)             Checksum: 41580F588EAA2F56DE18DB1D1279D160;3379.
  ) 
 Here is how much of TeX's memory you used:
- 13592 strings out of 475386
- 218748 string characters out of 2776906
- 569809 words of memory out of 3000000
- 34652 multiletter control sequences out of 15000+600000
+ 14492 strings out of 475386
+ 235160 string characters out of 2776906
+ 583102 words of memory out of 3000000
+ 35514 multiletter control sequences out of 15000+600000
  489522 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,12n,77p,891b,530s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 72i,17n,77p,891b,577s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt10
 95.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
 ti1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
@@ -839,9 +924,9 @@ ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nik1m/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
 /nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on CiSSA.pdf (19 pages, 900911 bytes).
+Output written on CiSSA.pdf (20 pages, 936413 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 92 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 903 PDF objects out of 1000 (max. 8388607)
+ 99 named destinations out of 1000 (max. 500000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 
