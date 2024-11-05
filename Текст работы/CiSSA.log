@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  5 NOV 2024 11:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  5 NOV 2024 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -765,7 +765,7 @@ Overfull \hbox (23.34993pt too wide) in paragraph at lines 609--610
 ы про-мыш-лен-но-го про-из-вод-ства (Industrial
  []
 
-<img/trend inseparability example/IP_trend.png, id=266, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_trend.png, id=265, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
@@ -804,7 +804,7 @@ File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
 [19] (CiSSA.aux)
 Package rerunfilecheck Info: File `CiSSA.out' has not changed.
-(rerunfilecheck)             Checksum: F6253B6483D5F5FEB36B9ABCF4EABF6B;3307.
+(rerunfilecheck)             Checksum: 41580F588EAA2F56DE18DB1D1279D160;3379.
  ) 
 Here is how much of TeX's memory you used:
  13592 strings out of 475386
@@ -839,7 +839,7 @@ ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nik1m/A
 ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
 /nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on CiSSA.pdf (19 pages, 900348 bytes).
+Output written on CiSSA.pdf (19 pages, 900574 bytes).
 PDF statistics:
  796 PDF objects out of 1000 (max. 8388607)
  92 named destinations out of 1000 (max. 500000)
