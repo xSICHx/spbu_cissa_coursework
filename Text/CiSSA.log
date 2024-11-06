@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  6 NOV 2024 01:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  6 NOV 2024 07:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -755,7 +755,7 @@ Package hyperref Info: Link coloring ON on input line 47.
 \@outlinefile=\write3
 \openout3 = `CiSSA.out'.
 
-<../Title/report.pdf, id=63, 597.50829pt x 845.0471pt>
+<../Title/report.pdf, id=67, 597.50829pt x 845.0471pt>
 File: ../Title/report.pdf Graphic file (type pdf)
 <use ../Title/report.pdf>
 Package pdftex.def Info: ../Title/report.pdf  used on input line 50.
@@ -764,7 +764,7 @@ File: ../Title/report.pdf Graphic file (type pdf)
 <use ../Title/report.pdf>
 Package pdftex.def Info: ../Title/report.pdf  used on input line 50.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<../Title/report.pdf, id=66, page=1, 597.50829pt x 845.0471pt>
+<../Title/report.pdf, id=70, page=1, 597.50829pt x 845.0471pt>
 File: ../Title/report.pdf Graphic file (type pdf)
 <use ../Title/report.pdf, page 1>
 Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 50.
@@ -811,122 +811,123 @@ Overfull \hbox (1.38426pt too wide) in paragraph at lines 110--111
 
 [4] [5] [6] [7]
 
-LaTeX Warning: Command \d invalid in math mode on input line 333.
+LaTeX Warning: Command \d invalid in math mode on input line 337.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--360
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 356--360
+Underfull \hbox (badness 10000) in paragraph at lines 360--364
 
  []
 
-[8] [9] [10] [11]
-<img/trend inseparability example/all.png, id=321, 497.86pt x 307.549pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--364
+
+ []
+
+[8] [9] [10] [11] [12] [13]
+<img/trend inseparability example/all.png, id=347, 497.86pt x 307.549pt>
 File: img/trend inseparability example/all.png Graphic file (type png)
 <use img/trend inseparability example/all.png>
 Package pdftex.def Info: img/trend inseparability example/all.png  used on inpu
-t line 547.
+t line 598.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
- [12]
-<img/trend inseparability example/ssa.png, id=327, 497.86pt x 307.549pt>
+<img/trend inseparability example/ssa.png, id=348, 497.86pt x 307.549pt>
 File: img/trend inseparability example/ssa.png Graphic file (type png)
 <use img/trend inseparability example/ssa.png>
 Package pdftex.def Info: img/trend inseparability example/ssa.png  used on inpu
-t line 554.
+t line 605.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/cissa.png, id=328, 497.86pt x 307.549pt>
+ [14 <./img/trend inseparability example/all.png>]
+<img/trend inseparability example/cissa.png, id=355, 497.86pt x 307.549pt>
 File: img/trend inseparability example/cissa.png Graphic file (type png)
 <use img/trend inseparability example/cissa.png>
 Package pdftex.def Info: img/trend inseparability example/cissa.png  used on in
-put line 563.
+put line 614.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
- [13 <./img/trend inseparability example/all.png> <./img/trend inseparability e
-xample/ssa.png>] [14 <./img/trend inseparability example/cissa.png>]
-Overfull \hbox (23.34993pt too wide) in paragraph at lines 634--635
+
+[15 <./img/trend inseparability example/ssa.png> <./img/trend inseparability ex
+ample/cissa.png>] [16]
+Overfull \hbox (23.34993pt too wide) in paragraph at lines 685--686
 []\T2A/cmr/m/n/10.95 Теперь рас-смот-рим ре-аль-ные дан-ные --- ме-сяч-ные ря-д
 ы про-мыш-лен-но-го про-из-вод-ства (Industrial
  []
 
-<img/trend inseparability example/IP_trend.png, id=362, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_trend.png, id=386, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
- input line 638.
+ input line 689.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-[15]
-<img/trend inseparability example/IP_cycle.png, id=368, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_cycle.png, id=387, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_cycle.png Graphic file (type png)
 <use img/trend inseparability example/IP_cycle.png>
 Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
- input line 647.
+ input line 698.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/IP_sesonal.jpg, id=369, 681.98451pt x 557.802
+[17 <./img/trend inseparability example/IP_trend.png>]
+<img/trend inseparability example/IP_sesonal.jpg, id=394, 681.98451pt x 557.802
 25pt>
 File: img/trend inseparability example/IP_sesonal.jpg Graphic file (type jpg)
 <use img/trend inseparability example/IP_sesonal.jpg>
 Package pdftex.def Info: img/trend inseparability example/IP_sesonal.jpg  used 
-on input line 656.
+on input line 707.
 (pdftex.def)             Requested size: 375.80542pt x 307.37946pt.
- [16 <./img/trend inseparability example/IP_trend.png> <./img/trend inseparabil
-ity example/IP_cycle.png>]
-<img/trend inseparability example/W-corr.jpg, id=378, 3310.16957pt x 1469.8293p
+ [18 <./img/trend inseparability example/IP_cycle.png> <./img/trend inseparabil
+ity example/IP_sesonal.jpg>]
+<img/trend inseparability example/W-corr.jpg, id=402, 3310.16957pt x 1469.8293p
 t>
 File: img/trend inseparability example/W-corr.jpg Graphic file (type jpg)
 <use img/trend inseparability example/W-corr.jpg>
 Package pdftex.def Info: img/trend inseparability example/W-corr.jpg  used on i
-nput line 673.
+nput line 724.
 (pdftex.def)             Requested size: 375.80542pt x 166.86253pt.
- [17 <./img/trend inseparability example/IP_sesonal.jpg> <./img/trend inseparab
-ility example/W-corr.jpg>] [18] [19] (CiSSA.bbl
+ [19 <./img/trend inseparability example/W-corr.jpg>] [20] (CiSSA.bbl
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
 29.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-[20] (CiSSA.aux)
+[21] (CiSSA.aux)
 Package rerunfilecheck Info: File `CiSSA.out' has not changed.
-(rerunfilecheck)             Checksum: 41580F588EAA2F56DE18DB1D1279D160;3379.
+(rerunfilecheck)             Checksum: E33C4E321123C0EAABE856730F399AAF;3842.
  ) 
 Here is how much of TeX's memory you used:
- 14492 strings out of 475386
- 235160 string characters out of 2776906
- 583102 words of memory out of 3000000
- 35514 multiletter control sequences out of 15000+600000
- 489522 words of font info for 74 fonts, out of 8000000 for 9000
+ 14501 strings out of 475386
+ 235287 string characters out of 2776906
+ 586137 words of memory out of 3000000
+ 35518 multiletter control sequences out of 15000+600000
+ 489863 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,17n,77p,891b,577s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt10
-95.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-ti1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
-0\labx1200.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/d
-pi600\larm1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t
-2a/dpi600\labx1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/
-lh-t2a/dpi600\labx1440.pk><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/nik1m/AppData/Local/Progra
-ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nik1m/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nik1m/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/
-nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C
-:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
-8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmr10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/Local/Prog
-rams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nik1m/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nik1m/A
-ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users
-/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb>
-Output written on CiSSA.pdf (20 pages, 936413 bytes).
+95.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
+tcrm1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
+600\lati1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
+/dpi600\labx1200.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
+-t2a/dpi600\larm1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/l
+h/lh-t2a/dpi600\labx1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/lh/lh-t2a/dpi600\labx1440.pk><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nik1m/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/nik1m/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nik1m/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nik
+1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.
+pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nik1m/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/n
+ik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on CiSSA.pdf (21 pages, 949084 bytes).
 PDF statistics:
- 903 PDF objects out of 1000 (max. 8388607)
- 99 named destinations out of 1000 (max. 500000)
- 176 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 936 PDF objects out of 1000 (max. 8388607)
+ 103 named destinations out of 1000 (max. 500000)
+ 184 words of extra memory for PDF output out of 10000 (max. 10000000)
 
