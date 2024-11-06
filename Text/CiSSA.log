@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  6 NOV 2024 17:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  6 NOV 2024 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -878,7 +878,7 @@ nput line 750.
 (pdftex.def)             Requested size: 375.80542pt x 166.86253pt.
  [19 <./img/trend inseparability example/W-corr.jpg>] [20] (CiSSA.bbl
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
-29.
+23.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
@@ -921,7 +921,7 @@ Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/n
 ik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
 /Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on CiSSA.pdf (21 pages, 959661 bytes).
+Output written on CiSSA.pdf (21 pages, 959318 bytes).
 PDF statistics:
  966 PDF objects out of 1000 (max. 8388607)
  111 named destinations out of 1000 (max. 500000)
