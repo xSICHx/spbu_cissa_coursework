@@ -1344,7 +1344,7 @@ for (i in 1:100){
   data$cos_err[[1]][[i]] <- 
     min(mse(y1[1:(n-1)], r_ssa$F1), mse(y1[1:(n-1)], r_ssa$F2))
   data$sin_err[[1]][[i]] <-
-    min(mse(y2[1:(n-1)], r_ssa$F2), mse(y2[1:(n-1)], r_ssa$F1))
+    min(mse(y2[1:(n-1)], r_ssa$F1), mse(y2[1:(n-1)], r_ssa$F2))
   
   data$cos_err[[2]][[i]] <- mse(y1[1:(n-1)], r_ssa_e$sesonal_sin)
   data$sin_err[[2]][[i]] <- mse(y2[1:(n-1)], r_ssa_e$sesonal_cos)
