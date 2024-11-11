@@ -1152,7 +1152,7 @@ n <- 96*2
 L <- 96
 x <- 0:(n-1)
 y1 <- sin(2*pi/12 * x)
-y2 <- cos(2*pi/3 * x)
+y2 <- cos(2*pi/3 * x)/2
 y <- y1 + y2
 X <- hankel(y, L = L)
 eps <- 1/(n+1)
@@ -1268,9 +1268,9 @@ print(table_latex, include.rownames = FALSE)
 ```{r}
 
 data <- list(
-  Метод = c("SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
-  sin_err = list(list(), list(), list(), list()),
-  cos_err = list(list(), list(), list(), list())
+  Метод = c("SSA","SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
+  sin_err = list(list(), list(), list(), list(), list()),
+  cos_err = list(list(), list(), list(), list(), list())
 )
 
 for (i in 1:100){
@@ -1280,24 +1280,28 @@ for (i in 1:100){
   L <- 96
   x <- 0:(n-1)
   y1 <- sin(2*pi/12 * x)
-  y2 <- cos(2*pi/3 * x)
+  y2 <- cos(2*pi/3 * x)/2
   y <- y1 + y2 + rnorm(n, 0, 0.1)
   X <- hankel(y, L = L)
   eps <- 1/(n+1)
   
-  s_ssa <- ssa(y, L)
+  s_ssa <- ssa(y[1:(n-1)], L)
+  r_ssa <- reconstruct(s_ssa, groups = list(
+    F1 = c(1, 2),
+    F2 = c(3, 4)
+  ))
   # r_ssa <- reconstruct(s_ssa, groups=list(
   #   sesonal_sin = c(1, 2),
   #   sesonal_cos = c(3, 4)
   # ))
-  # plot(x, r_ssa$sesonal_sin)
-  # plot(x, r_ssa$sesonal_cos)
+  # plot(x[1:(n-1)], r_ssa$F1, type = "l")
+  # plot(x[1:(n-1)], r_ssa$F2, type = "l")
   # plot(wcor(s_ssa, groups = 1:10), scales = list(at = c(10, 20, 30)))
   e_ssa <- eossa_new(s_ssa, nested.groups = list(1:4), clust_type = "distance")
   g_sesonal_e <- grouping.auto(e_ssa, base = "eigen",
                          freq.bins = list(
                            sesonal_sin = c(1/12-eps, 1/12+eps),
-                           sesonal_cos = c(1/8-eps, 1/8+eps)
+                           sesonal_cos = c(1/3-eps, 1/3+eps)
                                           ),
                          threshold = 0.5)
   r_ssa_e <- reconstruct(e_ssa, groups=g_sesonal_e)
@@ -1310,7 +1314,7 @@ for (i in 1:100){
   r_fft_grouped <- grouping_cissa(r_fft,
                       groups = list(
                         sesonal_sin = c(1/12-eps, 1/12+eps),
-                        sesonal_cos = c(1/8-eps, 1/8+eps)
+                        sesonal_cos = c(1/3-eps, 1/3+eps)
                       )
                       )$t_series
   
@@ -1325,7 +1329,7 @@ for (i in 1:100){
   r_cissa_grouped <- grouping_cissa(r_cissa,
                       groups = list(
                         sesonal_sin = c(1/12-eps, 1/12+eps),
-                        sesonal_cos = c(1/8-eps, 1/8+eps)
+                        sesonal_cos = c(1/3-eps, 1/3+eps)
                       )
                       )$t_series
   
@@ -1334,33 +1338,37 @@ for (i in 1:100){
   r_cissa_grouped_ext <- grouping_cissa(r_cissa_ext,
                       groups = list(
                         sesonal_sin = c(1/12-eps, 1/12+eps),
-                        sesonal_cos = c(1/8-eps, 1/8+eps)
+                        sesonal_cos = c(1/3-eps, 1/3+eps)
                       )
                       )$t_series
+  data$cos_err[[1]][[i]] <- 
+    min(mse(y1[1:(n-1)], r_ssa$F1), mse(y1[1:(n-1)], r_ssa$F2))
+  data$sin_err[[1]][[i]] <-
+    min(mse(y2[1:(n-1)], r_ssa$F2), mse(y2[1:(n-1)], r_ssa$F1))
   
-  data$cos_err[[1]][[i]] <- mse(y1, r_ssa_e$sesonal_sin)
-  data$sin_err[[1]][[i]] <- mse(y2, r_ssa_e$sesonal_cos)
-  
-  
-  data$cos_err[[2]][[i]] <- mse(y1, r_fft_grouped$sesonal_sin)
-  data$sin_err[[2]][[i]] <- mse(y2, r_fft_grouped$sesonal_cos)
-  
-  
-  data$cos_err[[3]][[i]] <- mse(y1, r_cissa_grouped$sesonal_sin)
-  data$sin_err[[3]][[i]] <- mse(y2, r_cissa_grouped$sesonal_cos)
+  data$cos_err[[2]][[i]] <- mse(y1[1:(n-1)], r_ssa_e$sesonal_sin)
+  data$sin_err[[2]][[i]] <- mse(y2[1:(n-1)], r_ssa_e$sesonal_cos)
   
   
-  data$cos_err[[4]][[i]] <- mse(y1, r_cissa_grouped_ext$sesonal_sin)
-  data$sin_err[[4]][[i]] <- mse(y2, r_cissa_grouped_ext$sesonal_cos)
+  data$cos_err[[3]][[i]] <- mse(y1, r_fft_grouped$sesonal_sin)
+  data$sin_err[[3]][[i]] <- mse(y2, r_fft_grouped$sesonal_cos)
+  
+  
+  data$cos_err[[4]][[i]] <- mse(y1, r_cissa_grouped$sesonal_sin)
+  data$sin_err[[4]][[i]] <- mse(y2, r_cissa_grouped$sesonal_cos)
+  
+  
+  data$cos_err[[5]][[i]] <- mse(y1, r_cissa_grouped_ext$sesonal_sin)
+  data$sin_err[[5]][[i]] <- mse(y2, r_cissa_grouped_ext$sesonal_cos)
 }
 library(xtable)
 
 # Шаг 2: Создание примера данных
 data_prev <- data
 data <- data.frame(
-  Метод = c("SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
-  sin_err = c(0, 0, 0, 0),
-  cos_err = c(0, 0, 0, 0)
+  Метод = c("SSA", "SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
+  sin_err = c(0, 0, 0, 0, 0),
+  cos_err = c(0, 0, 0, 0, 0)
 )
 
 data$cos_err[1] <- mean(data_prev$cos_err[[1]] |> unlist()) |>
@@ -1368,22 +1376,27 @@ data$cos_err[1] <- mean(data_prev$cos_err[[1]] |> unlist()) |>
 data$sin_err[1] <- mean(data_prev$sin_err[[1]]|> unlist()) |>
   formatC(format = "e", digits = 1)
 
-
-data$cos_err[2] <- mean(data_prev$cos_err[[2]]|> unlist()) |>
+data$cos_err[2] <- mean(data_prev$cos_err[[2]] |> unlist()) |>
   formatC(format = "e", digits = 1)
 data$sin_err[2] <- mean(data_prev$sin_err[[2]]|> unlist()) |>
   formatC(format = "e", digits = 1)
 
 
-data$cos_err[3] <- mean(data_prev$cos_err[[3]]|> unlist()) |> 
+data$cos_err[3] <- mean(data_prev$cos_err[[3]]|> unlist()) |>
   formatC(format = "e", digits = 1)
-data$sin_err[3] <- mean(data_prev$sin_err[[3]]|> unlist()) |> 
+data$sin_err[3] <- mean(data_prev$sin_err[[3]]|> unlist()) |>
   formatC(format = "e", digits = 1)
 
 
 data$cos_err[4] <- mean(data_prev$cos_err[[4]]|> unlist()) |> 
   formatC(format = "e", digits = 1)
 data$sin_err[4] <- mean(data_prev$sin_err[[4]]|> unlist()) |> 
+  formatC(format = "e", digits = 1)
+
+
+data$cos_err[5] <- mean(data_prev$cos_err[[5]]|> unlist()) |> 
+  formatC(format = "e", digits = 1)
+data$sin_err[5] <- mean(data_prev$sin_err[[5]]|> unlist()) |> 
   formatC(format = "e", digits = 1)
 
 
@@ -1422,25 +1435,27 @@ n <- 96*2
 x <- 0:(n-1)
 L <- 96
 y1 <- sin(2*pi/12 * x)
-y2 <- cos(2*pi/8 * x)
+y2 <- cos(2*pi/3 * x)/2
 y3 <- exp(x/100) + 1
 y <- y1 + y2 + y3
 eps <- 1/(n+1)
 
-s_ssa <- ssa(y, L)
-# r_ssa <- reconstruct(s_ssa, groups=list(
-#   sesonal_sin = c(1, 2),
-#   sesonal_cos = c(3, 4)
-# ))
-# plot(x, r_ssa$sesonal_sin)
-# plot(x, r_ssa$sesonal_cos)
+s_ssa <- ssa(y[1:(n-1)], L)
+r_ssa <- reconstruct(s_ssa, groups=list(
+  e = c(1),
+  sesonal_sin = c(2, 3),
+  sesonal_cos = c(4, 5)
+))
+# plot(x[1:(n-1)], r_ssa$e, type = "l")
+# plot(x[1:(n-1)], r_ssa$sesonal_sin, type = "l")
+# plot(x[1:(n-1)], r_ssa$sesonal_cos, type = "l")
 # plot(wcor(s_ssa, groups = 1:10), scales = list(at = c(10, 20, 30)))
-e_ssa <- eossa_new(s_ssa, nested.groups = list(1:6), clust_type = "distance")
+e_ssa <- eossa_new(s_ssa, nested.groups = list(1:7), clust_type = "distance")
 g_sesonal_e <- grouping.auto(e_ssa, base = "eigen",
                        freq.bins = list(
                          e = c(0, 1/12-eps-eps),
                          sesonal_sin = c(1/12-eps, 1/12+eps),
-                         sesonal_cos = c(1/8-eps, 1/8+eps)
+                         sesonal_cos = c(1/3-eps, 1/3+eps)
                                         ),
                        threshold = 0.5)
 r_ssa_e <- reconstruct(e_ssa, groups=g_sesonal_e)
@@ -1454,7 +1469,7 @@ r_fft_grouped <- grouping_cissa(r_fft,
                     groups = list(
                       e = c(0, 1/12-eps-eps),
                       sesonal_sin = c(1/12-eps, 1/12+eps),
-                      sesonal_cos = c(1/8-eps, 1/8+eps)
+                      sesonal_cos = c(1/3-eps, 1/3+eps)
                     )
                     )$t_series
 
@@ -1470,7 +1485,7 @@ r_cissa_grouped <- grouping_cissa(r_cissa,
                     groups = list(
                       e = c(0, 1/12-eps-eps),
                       sesonal_sin = c(1/12-eps, 1/12+eps),
-                      sesonal_cos = c(1/8-eps, 1/8+eps)
+                      sesonal_cos = c(1/3-eps, 1/3+eps)
                     )
                     )$t_series
 
@@ -1480,7 +1495,7 @@ r_cissa_grouped_ext <- grouping_cissa(r_cissa_ext,
                     groups = list(
                       e = c(0, 1/12-eps-eps),
                       sesonal_sin = c(1/12-eps, 1/12+eps),
-                      sesonal_cos = c(1/8-eps, 1/8+eps)
+                      sesonal_cos = c(1/3-eps, 1/3+eps)
                     )
                     )$t_series
 
@@ -1492,40 +1507,47 @@ library(xtable)
 
 # Шаг 2: Создание примера данных
 data <- data.frame(
-  Метод = c("SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
-  e_err = c(1, 1, 1, 1),
-  sin_err = c (20, 20, 1, 1),
-  cos_err = c(1, 1, 1, 1)
+  Метод = c("SSA", "SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
+  e_err = c(1, 1, 1, 1, 1),
+  sin_err = c (1, 20, 20, 1, 1),
+  cos_err = c(1, 1, 1, 1, 1)
 )
 
-data$cos_err[1] <- mse(y1, r_ssa_e$sesonal_sin) |>
+data$cos_err[1] <- mse(y1[1:(n-1)], r_ssa$sesonal_sin) |>
   formatC(format = "e", digits = 1)
-data$sin_err[1] <- mse(y2, r_ssa_e$sesonal_cos) |>
+data$sin_err[1] <- mse(y2[1:(n-1)], r_ssa$sesonal_cos) |>
   formatC(format = "e", digits = 1)
-data$e_err[1] <- mse(y3, r_ssa_e$e) |>
+data$e_err[1] <- mse(y3[1:(n-1)], r_ssa$e) |>
+  formatC(format = "e", digits = 1)
+
+data$cos_err[2] <- mse(y1[1:(n-1)], r_ssa_e$sesonal_sin) |>
+  formatC(format = "e", digits = 1)
+data$sin_err[2] <- mse(y2[1:(n-1)], r_ssa_e$sesonal_cos) |>
+  formatC(format = "e", digits = 1)
+data$e_err[2] <- mse(y3[1:(n-1)], r_ssa_e$e) |>
   formatC(format = "e", digits = 1)
 
 
-data$cos_err[2] <- mse(y1, r_fft_grouped$sesonal_sin) |>
+data$cos_err[3] <- mse(y1, r_fft_grouped$sesonal_sin) |>
   formatC(format = "e", digits = 1)
-data$sin_err[2] <- mse(y2, r_fft_grouped$sesonal_cos) |>
+data$sin_err[3] <- mse(y2, r_fft_grouped$sesonal_cos) |>
   formatC(format = "e", digits = 1)
-data$e_err[2] <- mse(y3, r_fft_grouped$e) |>
-  formatC(format = "e", digits = 1)
-
-
-data$cos_err[3] <- mse(y1, r_cissa_grouped$sesonal_sin) |> 
-  formatC(format = "e", digits = 1)
-data$sin_err[3] <- mse(y2, r_cissa_grouped$sesonal_cos) |> 
-  formatC(format = "e", digits = 1)
-data$e_err[3] <- mse(y3, r_cissa_grouped$e) |>
+data$e_err[3] <- mse(y3, r_fft_grouped$e) |>
   formatC(format = "e", digits = 1)
 
-data$cos_err[4] <- mse(y1, r_cissa_grouped_ext$sesonal_sin) |> 
+
+data$cos_err[4] <- mse(y1, r_cissa_grouped$sesonal_sin) |> 
   formatC(format = "e", digits = 1)
-data$sin_err[4] <- mse(y2, r_cissa_grouped_ext$sesonal_cos) |> 
+data$sin_err[4] <- mse(y2, r_cissa_grouped$sesonal_cos) |> 
   formatC(format = "e", digits = 1)
-data$e_err[4] <- mse(y3, r_cissa_grouped_ext$e) |>
+data$e_err[4] <- mse(y3, r_cissa_grouped$e) |>
+  formatC(format = "e", digits = 1)
+
+data$cos_err[5] <- mse(y1, r_cissa_grouped_ext$sesonal_sin) |> 
+  formatC(format = "e", digits = 1)
+data$sin_err[5] <- mse(y2, r_cissa_grouped_ext$sesonal_cos) |> 
+  formatC(format = "e", digits = 1)
+data$e_err[5] <- mse(y3, r_cissa_grouped_ext$e) |>
   formatC(format = "e", digits = 1)
 
 
@@ -1546,10 +1568,10 @@ print(table_latex, include.rownames = FALSE)
 #   exp_err = c(1, 1, 20)
 # )
 data <- list(
-  Метод = c("SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
-  sin_err = list(list(), list(), list(), list()),
-  cos_err = list(list(), list(), list(), list()),
-  exp_err = list(list(), list(), list(), list())
+  Метод = c("SSA", "SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
+  sin_err = list(list(), list(), list(), list(), list()),
+  cos_err = list(list(), list(), list(), list(), list()),
+  exp_err = list(list(), list(), list(), list(), list())
 )
 
 for (i in 1:100){
@@ -1559,25 +1581,25 @@ for (i in 1:100){
   x <- 0:(n-1)
   L <- 96
   y1 <- sin(2*pi/12 * x)
-  y2 <- cos(2*pi/8 * x)
+  y2 <- cos(2*pi/3 * x)/2
   y3 <- exp(x/100) + 1
   y <- y1 + y2 + y3 + rnorm(n, 0, 0.1)
   eps <- 1/(n+1)
   
-  s_ssa <- ssa(y, L)
-  # r_ssa <- reconstruct(s_ssa, groups=list(
-  #   sesonal_sin = c(1, 2),
-  #   sesonal_cos = c(3, 4)
-  # ))
-  # plot(x, r_ssa$sesonal_sin)
-  # plot(x, r_ssa$sesonal_cos)
-  # plot(wcor(s_ssa, groups = 1:10), scales = list(at = c(10, 20, 30)))
+  s_ssa <- ssa(y[1:(n-1)], L)
+  r_ssa <- reconstruct(s_ssa, groups=list(
+    e = 1,
+    sesonal_sin = c(2, 3),
+    sesonal_cos = c(4, 5)
+  ))
+  
+  
   e_ssa <- eossa_new(s_ssa, nested.groups = list(1:6), clust_type = "distance")
   g_sesonal_e <- grouping.auto(e_ssa, base = "eigen",
                          freq.bins = list(
                            e = c(0, 1/12-eps-eps),
                            sesonal_sin = c(1/12-eps, 1/12+eps),
-                           sesonal_cos = c(1/8-eps, 1/8+eps)
+                           sesonal_cos = c(1/3-eps, 1/3+eps)
                                           ),
                          threshold = 0.5)
   r_ssa_e <- reconstruct(e_ssa, groups=g_sesonal_e)
@@ -1589,7 +1611,7 @@ for (i in 1:100){
                       groups = list(
                         e = c(0, 1/12-eps-eps),
                         sesonal_sin = c(1/12-eps, 1/12+eps),
-                        sesonal_cos = c(1/8-eps, 1/8+eps)
+                        sesonal_cos = c(1/3-eps, 1/3+eps)
                       )
                       )$t_series
   
@@ -1599,7 +1621,7 @@ for (i in 1:100){
                       groups = list(
                         e = c(0, 1/12-eps-eps),
                         sesonal_sin = c(1/12-eps, 1/12+eps),
-                        sesonal_cos = c(1/8-eps, 1/8+eps)
+                        sesonal_cos = c(1/3-eps, 1/3+eps)
                       )
                       )$t_series
   
@@ -1609,38 +1631,46 @@ for (i in 1:100){
                       groups = list(
                         e = c(0, 1/12-eps-eps),
                         sesonal_sin = c(1/12-eps, 1/12+eps),
-                        sesonal_cos = c(1/8-eps, 1/8+eps)
+                        sesonal_cos = c(1/3-eps, 1/3+eps)
                       )
                       )$t_series
   
-  data$cos_err[[1]][[i]] <- mse(y1, r_ssa_e$sesonal_sin)
-  data$sin_err[[1]][[i]] <- mse(y2, r_ssa_e$sesonal_cos)
-  data$exp_err[[1]][[i]] <- mse(y3, r_ssa_e$e)
   
   
-  data$cos_err[[2]][[i]] <- mse(y1, r_fft_grouped$sesonal_sin)
-  data$sin_err[[2]][[i]] <- mse(y2, r_fft_grouped$sesonal_cos)
-  data$exp_err[[2]][[i]] <- mse(y3, r_fft_grouped$e)
+  data$cos_err[[1]][[i]] <- mse(y1[1:(n-1)], r_ssa$sesonal_sin)
+  data$sin_err[[1]][[i]] <- mse(y2[1:(n-1)], r_ssa$sesonal_cos)
+  data$exp_err[[1]][[i]] <- mse(y3[1:(n-1)], r_ssa$e)
+  
+  data$cos_err[[2]][[i]] <- mse(y1[1:(n-1)], r_ssa_e$sesonal_sin)
+  data$sin_err[[2]][[i]] <- mse(y2[1:(n-1)], r_ssa_e$sesonal_cos)
+  data$exp_err[[2]][[i]] <- mse(y3[1:(n-1)], r_ssa_e$e)
+  
+  # print(data$sin_err[[2]][[i]])
   
   
-  data$cos_err[[3]][[i]] <- mse(y1, r_cissa_grouped$sesonal_sin)
-  data$sin_err[[3]][[i]] <- mse(y2, r_cissa_grouped$sesonal_cos)
-  data$exp_err[[3]][[i]] <- mse(y3, r_cissa_grouped$e)
+  data$cos_err[[3]][[i]] <- mse(y1, r_fft_grouped$sesonal_sin)
+  data$sin_err[[3]][[i]] <- mse(y2, r_fft_grouped$sesonal_cos)
+  data$exp_err[[3]][[i]] <- mse(y3, r_fft_grouped$e)
   
   
-  data$cos_err[[4]][[i]] <- mse(y1, r_cissa_grouped_ext$sesonal_sin)
-  data$sin_err[[4]][[i]] <- mse(y2, r_cissa_grouped_ext$sesonal_cos)
-  data$exp_err[[4]][[i]] <- mse(y3, r_cissa_grouped_ext$e)
+  data$cos_err[[4]][[i]] <- mse(y1, r_cissa_grouped$sesonal_sin)
+  data$sin_err[[4]][[i]] <- mse(y2, r_cissa_grouped$sesonal_cos)
+  data$exp_err[[4]][[i]] <- mse(y3, r_cissa_grouped$e)
+  
+  
+  data$cos_err[[5]][[i]] <- mse(y1, r_cissa_grouped_ext$sesonal_sin)
+  data$sin_err[[5]][[i]] <- mse(y2, r_cissa_grouped_ext$sesonal_cos)
+  data$exp_err[[5]][[i]] <- mse(y3, r_cissa_grouped_ext$e)
 }
 library(xtable)
-
+# data$sin_err[[2]]
 # Шаг 2: Создание примера данных
 data_prev <- data
 data <- data.frame(
-  Метод = c("SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
-  sin_err = c(0, 0, 0, 0),
-  cos_err = c(0, 0, 0, 0),
-  exp_err = c(0, 0, 0, 0 )
+  Метод = c("SSA", "SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
+  sin_err = c(0, 0, 0, 0, 0),
+  cos_err = c(0, 0, 0, 0, 0),
+  exp_err = c(0, 0, 0, 0, 0)
 )
 
 data$cos_err[1] <- mean(data_prev$cos_err[[1]] |> unlist()) |>
@@ -1672,6 +1702,13 @@ data$cos_err[4] <- mean(data_prev$cos_err[[4]]|> unlist()) |>
 data$sin_err[4] <- mean(data_prev$sin_err[[4]]|> unlist()) |> 
   formatC(format = "e", digits = 1)
 data$exp_err[4] <- mean(data_prev$exp_err[[4]]|> unlist()) |>
+  formatC(format = "e", digits = 1)
+
+data$cos_err[5] <- mean(data_prev$cos_err[[5]]|> unlist()) |> 
+  formatC(format = "e", digits = 1)
+data$sin_err[5] <- mean(data_prev$sin_err[[5]]|> unlist()) |> 
+  formatC(format = "e", digits = 1)
+data$exp_err[5] <- mean(data_prev$exp_err[[5]]|> unlist()) |>
   formatC(format = "e", digits = 1)
 
 
