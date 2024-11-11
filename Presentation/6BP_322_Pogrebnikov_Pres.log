@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  11 NOV 2024 12:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.5) (preloaded format=pdflatex 2023.5.28)  11 NOV 2024 17:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1840,7 +1840,7 @@ Overfull \hbox (1.25565pt too wide) in paragraph at lines 81--81
  []
 
 
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 103--103
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 107--107
  []\T2A/cmss/m/n/6 2/25 []  
  []
 
@@ -1854,7 +1854,7 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 {C:/Users/nik1m/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 131--131
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 135--135
  []\T2A/cmss/m/n/6 3/25 []  
  []
 
@@ -1867,7 +1867,7 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 148--148
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 152--152
  []\T2A/cmss/m/n/6 4/25 []  
  []
 
@@ -1880,7 +1880,7 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 181--181
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 170--170
  []\T2A/cmss/m/n/6 5/25 []  
  []
 
@@ -1893,18 +1893,18 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 1975) in paragraph at lines 181--181
+Underfull \hbox (badness 1975) in paragraph at lines 170--170
 []\T2A/cmss/m/n/10 Условия точ-ной раз-де-ли-мо-сти вы-во-дят-ся из по-ня-тий с
 ла-бо L-
  []
 
 
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 212--212
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 201--201
  []\T2A/cmss/m/n/6 6/25 []  
  []
 
 
-Overfull \vbox (1.11346pt too high) detected at line 212
+Overfull \vbox (1.11346pt too high) detected at line 201
  []
 
 
@@ -1916,7 +1916,7 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 243--243
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 217--217
  []\T2A/cmss/m/n/6 7/25 []  
  []
 
@@ -1929,15 +1929,15 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 272--272
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 246--246
  []\T2A/cmss/m/n/6 8/25 []  
  []
 
 
-LaTeX Warning: Command \d invalid in math mode on input line 272.
+LaTeX Warning: Command \d invalid in math mode on input line 246.
 
 
-LaTeX Warning: Command \d invalid in math mode on input line 272.
+LaTeX Warning: Command \d invalid in math mode on input line 246.
 
 
 Overfull \hbox (2.03835pt too wide) has occurred while \output is active
@@ -1948,7 +1948,7 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (1.25565pt too wide) in paragraph at lines 292--292
+Overfull \hbox (1.25565pt too wide) in paragraph at lines 266--266
  []\T2A/cmss/m/n/6 9/25 []  
  []
 
@@ -1961,12 +1961,12 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 313--313
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 287--287
  []\T2A/cmss/m/n/6 10/25 []  
  []
 
 
-Overfull \vbox (2.11534pt too high) detected at line 313
+Overfull \vbox (2.11534pt too high) detected at line 287
  []
 
 
@@ -1978,7 +1978,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 327--327
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 302--302
  []\T2A/cmss/m/n/6 11/25 []  
  []
 
@@ -1991,7 +1991,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 347--347
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 323--323
  []\T2A/cmss/m/n/6 12/25 []  
  []
 
@@ -2004,7 +2004,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 361--361
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 337--337
  []\T2A/cmss/m/n/6 13/25 []  
  []
 
@@ -2017,12 +2017,12 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 402--402
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 379--379
  []\T2A/cmss/m/n/6 14/25 []  
  []
 
 
-Overfull \hbox (4.09682pt too wide) in paragraph at lines 402--402
+Overfull \hbox (4.09682pt too wide) in paragraph at lines 379--379
  [] 
  []
 
@@ -2036,11 +2036,11 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-402.
+379.
  (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 431--431
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 408--408
  []\T2A/cmss/m/n/6 15/25 []  
  []
 
@@ -2053,7 +2053,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 462--462
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 439--439
  []\T2A/cmss/m/n/6 16/25 []  
  []
 
@@ -2066,7 +2066,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 493--493
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 470--470
  []\T2A/cmss/m/n/6 17/25 []  
  []
 
@@ -2079,7 +2079,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 523--523
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 500--500
  []\T2A/cmss/m/n/6 18/25 []  
  []
 
@@ -2092,7 +2092,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 536--536
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 513--513
  []\T2A/cmss/m/n/6 19/25 []  
  []
 
@@ -2105,7 +2105,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 554--554
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 531--531
  []\T2A/cmss/m/n/6 20/25 []  
  []
 
@@ -2118,15 +2118,15 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 569--569
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 546--546
  []\T2A/cmss/m/n/6 21/25 []  
  []
 
-<img/trend inseparability example/IP_trend.png, id=427, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_trend.png, id=438, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
- input line 569.
+ input line 546.
 (pdftex.def)             Requested size: 307.28987pt x 189.829pt.
 
 Overfull \hbox (5.56056pt too wide) has occurred while \output is active
@@ -2137,21 +2137,21 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 1005) in paragraph at lines 569--569
+Underfull \hbox (badness 1005) in paragraph at lines 546--546
 \T2A/cmss/m/n/10 EOSSA вы-гля-дит бо-лее изо-гну-тым при ви-зу-аль-ном срав-не-
 нии с
  []
 
 
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 584--584
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 561--561
  []\T2A/cmss/m/n/6 22/25 []  
  []
 
-<img/trend inseparability example/IP_cycle.png, id=438, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_cycle.png, id=449, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_cycle.png Graphic file (type png)
 <use img/trend inseparability example/IP_cycle.png>
 Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
- input line 584.
+ input line 561.
 (pdftex.def)             Requested size: 307.28987pt x 189.829pt.
 
 Overfull \hbox (5.56056pt too wide) has occurred while \output is active
@@ -2162,19 +2162,19 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
  <./img/trend inseparability example/IP_trend.png>]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 602--602
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 579--579
  []\T2A/cmss/m/n/6 23/25 []  
  []
 
-<img/trend inseparability example/IP_sesonal.jpg, id=451, 681.98451pt x 557.802
+<img/trend inseparability example/IP_sesonal.jpg, id=462, 681.98451pt x 557.802
 25pt>
 File: img/trend inseparability example/IP_sesonal.jpg Graphic file (type jpg)
 <use img/trend inseparability example/IP_sesonal.jpg>
 Package pdftex.def Info: img/trend inseparability example/IP_sesonal.jpg  used 
-on input line 602.
+on input line 579.
 (pdftex.def)             Requested size: 245.83282pt x 201.0725pt.
 
-Overfull \vbox (11.31076pt too high) detected at line 602
+Overfull \vbox (11.31076pt too high) detected at line 579
  []
 
 
@@ -2186,7 +2186,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
  <./img/trend inseparability example/IP_cycle.png>]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 623--623
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 600--600
  []\T2A/cmss/m/n/6 24/25 []  
  []
 
@@ -2199,7 +2199,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
  <./img/trend inseparability example/IP_sesonal.jpg>]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 635--635
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 612--612
  []\T2A/cmss/m/n/6 25/25 []  
  []
 
@@ -2237,58 +2237,59 @@ d.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29492 strings out of 475386
- 598555 string characters out of 2776906
- 905669 words of memory out of 3000000
- 50107 multiletter control sequences out of 15000+600000
+ 29494 strings out of 475386
+ 598802 string characters out of 2776906
+ 909595 words of memory out of 3000000
+ 50111 multiletter control sequences out of 15000+600000
  502066 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,21n,122p,1086b,676s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 128i,21n,122p,1595b,681s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt10
 00.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
 si1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi
 600\tcss1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
-/dpi600\laso1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
--t2a/dpi600\lasi1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/l
-h/lh-t2a/dpi600\lasx0600.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfo
-ur/lh/lh-t2a/dpi600\lasx1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/
+/dpi600\laso0800.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
+-t2a/dpi600\laso1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/l
+h/lh-t2a/dpi600\lasi1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/lh/lh-t2a/dpi600\lasx0600.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/
 ljfour/lh/lh-t2a/dpi600\lass0600.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\lasx1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\f
-onts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\nik1m\AppData\Local\MiKT
-eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0800.pk> <C:\Users\nik1m\AppData\Local\
-MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1000.pk> <C:\Users\nik1m\AppData\Lo
-cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1095.pk> <C:\Users\nik1m\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk><C:/Users/nik1m/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/
-nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C
-:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx
-6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmbx7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmex10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nik1m/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nik1m/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nik1m/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/nik1m
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Use
-rs/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr5.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/font
-s/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Local/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nik1m/AppData/
-Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nik1m/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/User
-s/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-<C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/symbols/msbm7.pfb>
-Output written on 6BP_322_Pogrebnikov_Pres.pdf (25 pages, 825481 bytes).
+/pk/ljfour/lh/lh-t2a/dpi600\lasx1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\f
+onts/pk/ljfour/lh/lh-t2a/dpi600\lasx1000.pk> <C:\Users\nik1m\AppData\Local\MiKT
+eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\nik1m\AppData\Local\
+MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0800.pk> <C:\Users\nik1m\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1000.pk> <C:\Users\nik1m\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1095.pk> <C:\Users\nik1m\Ap
+pData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk><C:/Users/nik1m
+/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Us
+ers/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pf
+b><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmbx7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmbx8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTe
+X/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nik1m/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nik1m/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nik1m/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/n
+ik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
+/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10
+.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmr5.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/cm/cmr7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/Local
+/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nik1m/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/ni
+k1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/
+Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/symbols/msbm7.pfb>
+Output written on 6BP_322_Pogrebnikov_Pres.pdf (25 pages, 833056 bytes).
 PDF statistics:
- 1162 PDF objects out of 1200 (max. 8388607)
- 120 named destinations out of 1000 (max. 500000)
- 442 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1179 PDF objects out of 1200 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
+ 478 words of extra memory for PDF output out of 10000 (max. 10000000)
 
