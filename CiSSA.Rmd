@@ -1273,7 +1273,7 @@ data <- list(
   cos_err = list(list(), list(), list(), list(), list())
 )
 
-for (i in 1:100){
+for (i in 1:50){
   set.seed(i)
   
   n <- 96*2
@@ -1365,6 +1365,7 @@ library(xtable)
 
 # Шаг 2: Создание примера данных
 data_prev <- data
+
 data <- data.frame(
   Метод = c("SSA", "SSA EOSSA","Fourier", "CiSSA", "CiSSA extended"),
   sin_err = c(0, 0, 0, 0, 0),
