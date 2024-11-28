@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.11)  22 NOV 2024 18:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.11)  28 NOV 2024 21:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -756,7 +756,7 @@ Package hyperref Info: Link coloring ON on input line 49.
 \@outlinefile=\write3
 \openout3 = `CiSSA.out'.
 
-<../Title/report.pdf, id=67, 597.50829pt x 845.0471pt>
+<../Title/report.pdf, id=71, 597.50829pt x 845.0471pt>
 File: ../Title/report.pdf Graphic file (type pdf)
 <use ../Title/report.pdf>
 Package pdftex.def Info: ../Title/report.pdf  used on input line 52.
@@ -765,7 +765,7 @@ File: ../Title/report.pdf Graphic file (type pdf)
 <use ../Title/report.pdf>
 Package pdftex.def Info: ../Title/report.pdf  used on input line 52.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<../Title/report.pdf, id=70, page=1, 597.50829pt x 845.0471pt>
+<../Title/report.pdf, id=74, page=1, 597.50829pt x 845.0471pt>
 File: ../Title/report.pdf Graphic file (type pdf)
 <use ../Title/report.pdf, page 1>
 Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 52.
@@ -790,12 +790,12 @@ Package pdftex.def Info: ../Title/report.pdf , page1 used on input line 52.
 
 
  <../Title/report.pdf>] (CiSSA.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -805,150 +805,138 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 [2{C:/Users/nik1m/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [3]
-Overfull \hbox (1.38426pt too wide) in paragraph at lines 115--116
+Overfull \hbox (1.38426pt too wide) in paragraph at lines 127--128
 \T2A/cmr/m/n/10.95 Результатом это-го ша-га яв-ля-ет-ся син-гу-ляр-ное раз-ло-ж
 е-ние (Singular Value Decomposition, $[]$)
  []
 
-[4] [5] [6] [7]
+[4] [5] [6] [7] [8]
 
-LaTeX Warning: Command \d invalid in math mode on input line 342.
+LaTeX Warning: Command \d invalid in math mode on input line 363.
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 391--394
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 412--415
 
  []
 
 
-Overfull \hbox (0.72253pt too wide) in paragraph at lines 391--394
+Overfull \hbox (0.72253pt too wide) in paragraph at lines 412--415
 \T2A/cmr/m/n/10.95 про-це-ду-ру рас-ши-ре-ния ря-да. Как утвер-жда-ет-ся ав-то-
 ра-ми ста-тьи [[]], по-сле рас-ши-ре-ния, $[]$
  []
 
-[9] [10]
-Overfull \hbox (31.34155pt too wide) in paragraph at lines 467--468
-\T2A/cmr/m/it/10.95 сле-до-ва-тель-ность $\OML/cmm/m/it/10.95 L \OT1/cmr/m/n/10
-.95 = \OML/cmm/m/it/10.95 L\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 N\OT1/cmr/m/
-n/10.95 )$\T2A/cmr/m/it/10.95 , $\OML/cmm/m/it/10.95 N \OMS/cmsy/m/n/10.95 ! 1$
-\T2A/cmr/m/it/10.95 , что при них $[] [] \OMS/cmsy/m/n/10.95 ! \OT1/cmr/m/n/10.
-95 0$ \T2A/cmr/m/it/10.95 и $[] [] \OMS/cmsy/m/n/10.95 !
+[10]
+Overfull \hbox (3.69519pt too wide) in paragraph at lines 447--448
+\T2A/cmr/m/it/10.95 ли их мат-ри-цы вло-же-ния $\OML/cmm/m/it/10.95 S[]$\T2A/cm
+r/m/it/10.95 , $\OML/cmm/m/it/10.95 S[]$ \T2A/cmr/m/it/10.95 асимп-то-ти-че-ски
+ эк-ви-ва-лен-ты в смыс-ле $[] [] \OT1/cmr/m/n/10.95 =
  []
 
-
-Overfull \hbox (19.0677pt too wide) in paragraph at lines 467--468
-\T2A/cmr/m/it/10.95 ал-го-рит-мом $[]$ для ча-стот $\OML/cmm/m/it/10.95 I[]$ \T
-2A/cmr/m/it/10.95 и $\OML/cmm/m/it/10.95 I[]$\T2A/cmr/m/it/10.95 , то ря-ды $\O
-T1/cmss/m/n/10.95 X[]$ \T2A/cmr/m/it/10.95 и $\OT1/cmss/m/n/10.95 X[]$ \T2A/cmr
-/m/it/10.95 на-зы-ва-ют-ся $[]$-асимтпотически
- []
-
-[11] [12] [13] [14]
-<img/trend inseparability example/all.png, id=373, 497.86pt x 307.549pt>
+[11] [12] [13] [14] [15]
+<img/trend inseparability example/all.png, id=384, 497.86pt x 307.549pt>
 File: img/trend inseparability example/all.png Graphic file (type png)
 <use img/trend inseparability example/all.png>
 Package pdftex.def Info: img/trend inseparability example/all.png  used on inpu
-t line 665.
+t line 692.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
- [15]
-<img/trend inseparability example/ssa.png, id=380, 497.86pt x 307.549pt>
+ [16]
+<img/trend inseparability example/ssa.png, id=391, 497.86pt x 307.549pt>
 File: img/trend inseparability example/ssa.png Graphic file (type png)
 <use img/trend inseparability example/ssa.png>
 Package pdftex.def Info: img/trend inseparability example/ssa.png  used on inpu
-t line 672.
+t line 699.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/cissa.png, id=381, 497.86pt x 307.549pt>
+<img/trend inseparability example/cissa.png, id=392, 497.86pt x 307.549pt>
 File: img/trend inseparability example/cissa.png Graphic file (type png)
 <use img/trend inseparability example/cissa.png>
 Package pdftex.def Info: img/trend inseparability example/cissa.png  used on in
-put line 681.
+put line 708.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
- [16 <./img/trend inseparability example/all.png> <./img/trend inseparability e
-xample/ssa.png>] [17 <./img/trend inseparability example/cissa.png>]
-Overfull \hbox (23.34993pt too wide) in paragraph at lines 753--754
+ [17 <./img/trend inseparability example/all.png> <./img/trend inseparability e
+xample/ssa.png>] [18 <./img/trend inseparability example/cissa.png>]
+Overfull \hbox (23.34993pt too wide) in paragraph at lines 780--781
 []\T2A/cmr/m/n/10.95 Теперь рас-смот-рим ре-аль-ные дан-ные --- ме-сяч-ные ря-д
 ы про-мыш-лен-но-го про-из-вод-ства (Industrial
  []
 
-<img/trend inseparability example/IP_trend.png, id=413, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_trend.png, id=424, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
- input line 763.
+ input line 790.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-[18]
-<img/trend inseparability example/IP_cycle.png, id=422, 497.86pt x 307.549pt>
+[19]
+<img/trend inseparability example/IP_cycle.png, id=434, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_cycle.png Graphic file (type png)
 <use img/trend inseparability example/IP_cycle.png>
 Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
- input line 772.
+ input line 799.
 (pdftex.def)             Requested size: 375.80542pt x 232.15349pt.
-<img/trend inseparability example/IP_sesonal.jpg, id=423, 681.98451pt x 557.802
+<img/trend inseparability example/IP_sesonal.jpg, id=435, 681.98451pt x 557.802
 25pt>
 File: img/trend inseparability example/IP_sesonal.jpg Graphic file (type jpg)
 <use img/trend inseparability example/IP_sesonal.jpg>
 Package pdftex.def Info: img/trend inseparability example/IP_sesonal.jpg  used 
-on input line 781.
+on input line 808.
 (pdftex.def)             Requested size: 375.80542pt x 307.37946pt.
- [19 <./img/trend inseparability example/IP_trend.png> <./img/trend inseparabil
+ [20 <./img/trend inseparability example/IP_trend.png> <./img/trend inseparabil
 ity example/IP_cycle.png>]
-<img/trend inseparability example/W-corr.jpg, id=433, 3310.16957pt x 1469.8293p
+<img/trend inseparability example/W-corr.jpg, id=444, 3310.16957pt x 1469.8293p
 t>
 File: img/trend inseparability example/W-corr.jpg Graphic file (type jpg)
 <use img/trend inseparability example/W-corr.jpg>
 Package pdftex.def Info: img/trend inseparability example/W-corr.jpg  used on i
-nput line 798.
+nput line 825.
 (pdftex.def)             Requested size: 375.80542pt x 166.86253pt.
- [20 <./img/trend inseparability example/IP_sesonal.jpg> <./img/trend inseparab
-ility example/W-corr.jpg>] [21] [22] (CiSSA.bbl
+ [21 <./img/trend inseparability example/IP_sesonal.jpg> <./img/trend inseparab
+ility example/W-corr.jpg>] [22] [23] (CiSSA.bbl
 LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
 23.
 
 (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ))
-[23] (CiSSA.aux)
+[24] (CiSSA.aux)
 Package rerunfilecheck Info: File `CiSSA.out' has not changed.
-(rerunfilecheck)             Checksum: ACC3BEA738F970B5CA20B4A53661758D;3754.
+(rerunfilecheck)             Checksum: 24F88D7F612E1FE818C1D1D02F9ED40E;3862.
  ) 
 Here is how much of TeX's memory you used:
- 14531 strings out of 475386
- 235600 string characters out of 2776905
- 585494 words of memory out of 3000000
- 35532 multiletter control sequences out of 15000+600000
- 492532 words of font info for 78 fonts, out of 8000000 for 9000
+ 14529 strings out of 475386
+ 235565 string characters out of 2776905
+ 584490 words of memory out of 3000000
+ 35531 multiletter control sequences out of 15000+600000
+ 489863 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,17n,77p,1072b,577s stack positions out of 10000i,1000n,20000p,200000b,80000s
  <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt10
-95.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
-tcrm1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
-600\labi1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
-/dpi600\labi0800.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
--t2a/dpi600\lati1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/l
-h/lh-t2a/dpi600\labx1200.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfo
-ur/lh/lh-t2a/dpi600\larm1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/
-ljfour/lh/lh-t2a/dpi600\labx1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\labx1440.pk><C:/Users/nik1m/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nik1m/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/nik1m/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nik1
-m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/U
-sers/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.
+95.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
+ti1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
+0\labx1200.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\tcrm1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
+-t2a/dpi600\larm1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/l
+h/lh-t2a/dpi600\labx1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/lh/lh-t2a/dpi600\labx1440.pk><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nik1m/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/nik1m/AppData/Local/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/nik1m/AppDat
+a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nik
+1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/
+Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.
 pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmr10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts
-/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Loca
-l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppD
-ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/n
-ik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:
-/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-symbols/msbm10.pfb>
-Output written on CiSSA.pdf (23 pages, 970253 bytes).
+m/cmmi8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmr10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nik1m/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/n
+ik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on CiSSA.pdf (24 pages, 974249 bytes).
 PDF statistics:
- 998 PDF objects out of 1000 (max. 8388607)
- 116 named destinations out of 1000 (max. 500000)
- 184 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1003 PDF objects out of 1200 (max. 8388607)
+ 118 named destinations out of 1000 (max. 500000)
+ 192 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.11)  11 NOV 2024 18:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.11.11)  28 NOV 2024 21:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1860,6 +1860,14 @@ Overfull \hbox (1.25565pt too wide) in paragraph at lines 110--110
  []
 
 
+Package natbib Warning: Citation `golyandina2001analysis' on page 3 undefined o
+n input line 110.
+
+
+Package natbib Warning: Citation `bogalo2020' on page 3 undefined on input line
+ 110.
+
+
 Overfull \hbox (2.03835pt too wide) has occurred while \output is active
  []\T2A/cmss/m/n/6 2/25 []  
  []
@@ -1869,6 +1877,15 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 {C:/Users/nik1m/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
+
+Package natbib Warning: Citation `golyandina2001analysis' on page 4 undefined o
+n input line 110.
+
+
+Package natbib Warning: Citation `bogalo2020' on page 4 undefined on input line
+ 110.
+
+
 Overfull \hbox (1.25565pt too wide) in paragraph at lines 138--138
  []\T2A/cmss/m/n/6 3/25 []  
  []
@@ -1900,6 +1917,10 @@ Overfull \hbox (1.25565pt too wide) in paragraph at lines 173--173
  []
 
 
+Package natbib Warning: Citation `golyandina2001analysis' on page 9 undefined o
+n input line 173.
+
+
 Overfull \hbox (2.03835pt too wide) has occurred while \output is active
  []\T2A/cmss/m/n/6 5/25 []  
  []
@@ -1908,6 +1929,11 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
+
+Package natbib Warning: Citation `golyandina2001analysis' on page 10 undefined 
+on input line 173.
+
+
 Underfull \hbox (badness 1975) in paragraph at lines 173--173
 []\T2A/cmss/m/n/10 Условия точ-ной раз-де-ли-мо-сти вы-во-дят-ся из по-ня-тий с
 ла-бо L-
@@ -1917,6 +1943,10 @@ Underfull \hbox (badness 1975) in paragraph at lines 173--173
 Overfull \hbox (1.25565pt too wide) in paragraph at lines 204--204
  []\T2A/cmss/m/n/6 6/25 []  
  []
+
+
+Package natbib Warning: Citation `golyandina2001analysis' on page 11 undefined 
+on input line 204.
 
 
 Overfull \vbox (1.11346pt too high) detected at line 204
@@ -1934,6 +1964,10 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 Overfull \hbox (1.25565pt too wide) in paragraph at lines 220--220
  []\T2A/cmss/m/n/6 7/25 []  
  []
+
+
+Package natbib Warning: Citation `golyandina2023intelligent' on page 13 undefin
+ed on input line 220.
 
 
 Overfull \hbox (2.03835pt too wide) has occurred while \output is active
@@ -1963,6 +1997,11 @@ Overfull \hbox (2.03835pt too wide) has occurred while \output is active
 
 
 ]
+
+Package natbib Warning: Citation `bogalo2020' on page 16 undefined on input lin
+e 249.
+
+
 Overfull \hbox (1.25565pt too wide) in paragraph at lines 269--269
  []\T2A/cmss/m/n/6 9/25 []  
  []
@@ -2006,9 +2045,13 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 326--326
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 327--327
  []\T2A/cmss/m/n/6 12/25 []  
  []
+
+
+Package natbib Warning: Citation `bogalo2020' on page 23 undefined on input lin
+e 327.
 
 
 Overfull \hbox (5.56056pt too wide) has occurred while \output is active
@@ -2019,9 +2062,18 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 340--340
+
+Package natbib Warning: Citation `bogalo2020' on page 24 undefined on input lin
+e 327.
+
+
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 341--341
  []\T2A/cmss/m/n/6 13/25 []  
  []
+
+
+Package natbib Warning: Citation `bogalo2020' on page 25 undefined on input lin
+e 341.
 
 
 Overfull \hbox (5.56056pt too wide) has occurred while \output is active
@@ -2032,12 +2084,17 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 382--382
+
+Package natbib Warning: Citation `spbu_cissa_coursework_github' on page 26 unde
+fined on input line 341.
+
+
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 383--383
  []\T2A/cmss/m/n/6 14/25 []  
  []
 
 
-Overfull \hbox (4.09682pt too wide) in paragraph at lines 382--382
+Overfull \hbox (4.09682pt too wide) in paragraph at lines 383--383
  [] 
  []
 
@@ -2051,11 +2108,11 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 
-382.
+383.
  (C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmss.fd
 File: ts1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 411--411
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 412--412
  []\T2A/cmss/m/n/6 15/25 []  
  []
 
@@ -2068,7 +2125,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 442--442
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 443--443
  []\T2A/cmss/m/n/6 16/25 []  
  []
 
@@ -2081,7 +2138,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 473--473
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 474--474
  []\T2A/cmss/m/n/6 17/25 []  
  []
 
@@ -2094,7 +2151,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 503--503
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 504--504
  []\T2A/cmss/m/n/6 18/25 []  
  []
 
@@ -2107,7 +2164,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 516--516
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 517--517
  []\T2A/cmss/m/n/6 19/25 []  
  []
 
@@ -2120,7 +2177,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 534--534
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 535--535
  []\T2A/cmss/m/n/6 20/25 []  
  []
 
@@ -2133,15 +2190,15 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 549--549
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 550--550
  []\T2A/cmss/m/n/6 21/25 []  
  []
 
-<img/trend inseparability example/IP_trend.png, id=441, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_trend.png, id=413, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_trend.png Graphic file (type png)
 <use img/trend inseparability example/IP_trend.png>
 Package pdftex.def Info: img/trend inseparability example/IP_trend.png  used on
- input line 549.
+ input line 550.
 (pdftex.def)             Requested size: 307.28987pt x 189.829pt.
 
 Overfull \hbox (5.56056pt too wide) has occurred while \output is active
@@ -2152,21 +2209,21 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
 ]
-Underfull \hbox (badness 1005) in paragraph at lines 549--549
+Underfull \hbox (badness 1005) in paragraph at lines 550--550
 \T2A/cmss/m/n/10 EOSSA вы-гля-дит бо-лее изо-гну-тым при ви-зу-аль-ном срав-не-
 нии с
  []
 
 
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 564--564
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 565--565
  []\T2A/cmss/m/n/6 22/25 []  
  []
 
-<img/trend inseparability example/IP_cycle.png, id=452, 497.86pt x 307.549pt>
+<img/trend inseparability example/IP_cycle.png, id=424, 497.86pt x 307.549pt>
 File: img/trend inseparability example/IP_cycle.png Graphic file (type png)
 <use img/trend inseparability example/IP_cycle.png>
 Package pdftex.def Info: img/trend inseparability example/IP_cycle.png  used on
- input line 564.
+ input line 565.
 (pdftex.def)             Requested size: 307.28987pt x 189.829pt.
 
 Overfull \hbox (5.56056pt too wide) has occurred while \output is active
@@ -2177,19 +2234,19 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
  <./img/trend inseparability example/IP_trend.png>]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 582--582
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 583--583
  []\T2A/cmss/m/n/6 23/25 []  
  []
 
-<img/trend inseparability example/IP_sesonal.jpg, id=465, 681.98451pt x 557.802
+<img/trend inseparability example/IP_sesonal.jpg, id=437, 681.98451pt x 557.802
 25pt>
 File: img/trend inseparability example/IP_sesonal.jpg Graphic file (type jpg)
 <use img/trend inseparability example/IP_sesonal.jpg>
 Package pdftex.def Info: img/trend inseparability example/IP_sesonal.jpg  used 
-on input line 582.
+on input line 583.
 (pdftex.def)             Requested size: 245.83282pt x 201.0725pt.
 
-Overfull \vbox (11.31076pt too high) detected at line 582
+Overfull \vbox (11.31076pt too high) detected at line 583
  []
 
 
@@ -2201,7 +2258,7 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
  <./img/trend inseparability example/IP_cycle.png>]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 603--603
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 604--604
  []\T2A/cmss/m/n/6 24/25 []  
  []
 
@@ -2214,7 +2271,12 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
 
 
  <./img/trend inseparability example/IP_sesonal.jpg>]
-Overfull \hbox (4.77786pt too wide) in paragraph at lines 617--617
+
+Package natbib Warning: Citation `spbu_cissa_coursework_github' on page 48 unde
+fined on input line 604.
+
+
+Overfull \hbox (4.77786pt too wide) in paragraph at lines 618--618
  []\T2A/cmss/m/n/6 25/25 []  
  []
 
@@ -2283,11 +2345,10 @@ Package hyperref Warning: Glyph not defined in PU encoding,
 Package hyperref Warning: Glyph not defined in PU encoding,
 (hyperref)                removing `\cyrery' on input line 1.
 
-LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
-33.
-(C:\Users\nik1m\AppData\Local\Programs\MiKTeX\tex/latex/cyrillic\t2acmtt.fd
-File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-))
+
+Package natbib Warning: Empty `thebibliography' environment on input line 8.
+
+)
 Overfull \hbox (5.56056pt too wide) has occurred while \output is active
  []\T2A/cmss/m/n/6 25/25 []  
  []
@@ -2308,66 +2369,67 @@ Overfull \hbox (5.56056pt too wide) has occurred while \output is active
  [51
 
 
-] (6BP_322_Pogrebnikov_Pres.aux)
+]
+
+Package natbib Warning: There were undefined citations.
+
+(6BP_322_Pogrebnikov_Pres.aux)
 Package rerunfilecheck Info: File `6BP_322_Pogrebnikov_Pres.out' has not change
 d.
 (rerunfilecheck)             Checksum: FADBEC7A4C5F7B24E79D5B1E4FA387F4;51.
  ) 
 Here is how much of TeX's memory you used:
- 29867 strings out of 475386
- 603095 string characters out of 2776905
- 917040 words of memory out of 3000000
- 50474 multiletter control sequences out of 15000+600000
- 502863 words of font info for 103 fonts, out of 8000000 for 9000
+ 29822 strings out of 475386
+ 601850 string characters out of 2776905
+ 916775 words of memory out of 3000000
+ 50439 multiletter control sequences out of 15000+600000
+ 500887 words of font info for 100 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,21n,122p,1595b,676s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\latt10
-00.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\la
-rm1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi60
-0\lasi1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\tcss1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
--t2a/dpi600\laso0800.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/l
-h/lh-t2a/dpi600\laso1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfo
-ur/lh/lh-t2a/dpi600\lasi1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/
-ljfour/lh/lh-t2a/dpi600\lasx0600.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts
-/pk/ljfour/lh/lh-t2a/dpi600\lass0600.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\f
-onts/pk/ljfour/lh/lh-t2a/dpi600\lasx1095.pk> <C:\Users\nik1m\AppData\Local\MiKT
-eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lasx1000.pk> <C:\Users\nik1m\AppData\Local\
-MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\nik1m\AppData\Lo
-cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass0800.pk> <C:\Users\nik1m\AppDat
-a\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1000.pk> <C:\Users\nik1m\Ap
-pData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1095.pk> <C:\Users\nik1
-m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk><C:/Users/n
-ik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx
-5.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
-/cm/cmbx6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmbx7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmbx8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/nik1m/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nik1m/AppData/Local/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nik1m/AppData
-/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nik1m
-/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Use
-rs/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb
-><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmr5.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmr7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nik1m/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/User
-s/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-<C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-sy8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/symbols/msbm10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/symbols/msbm7.pfb>
-Output written on 6BP_322_Pogrebnikov_Pres.pdf (25 pages, 843330 bytes).
+ <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcss
+1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\
+laso0800.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi
+600\laso1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh-t2a
+/dpi600\lasi1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/lh/lh
+-t2a/dpi600\lasx0600.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfour/l
+h/lh-t2a/dpi600\lass0600.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/ljfo
+ur/lh/lh-t2a/dpi600\lasx1095.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts/pk/
+ljfour/lh/lh-t2a/dpi600\lasx1000.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\fonts
+/pk/ljfour/lh/lh-t2a/dpi600\lass0900.pk> <C:\Users\nik1m\AppData\Local\MiKTeX\f
+onts/pk/ljfour/lh/lh-t2a/dpi600\lass0800.pk> <C:\Users\nik1m\AppData\Local\MiKT
+eX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1000.pk> <C:\Users\nik1m\AppData\Local\
+MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1095.pk> <C:\Users\nik1m\AppData\Lo
+cal\MiKTeX\fonts/pk/ljfour/lh/lh-t2a/dpi600\lass1440.pk><C:/Users/nik1m/AppData
+/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/nik1
+m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Us
+ers/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx6.pf
+b><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmbx7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmbx8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmex10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/nik1m/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/nik1m/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/nik1m/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/n
+ik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.
+pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmr6.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmr7.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmss10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Users/nik1m/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/nik1m/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/nik1m/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/ni
+k1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/
+Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb><C:/Users/nik1m/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/symbols/msbm7.pfb>
+Output written on 6BP_322_Pogrebnikov_Pres.pdf (25 pages, 803405 bytes).
 PDF statistics:
- 1215 PDF objects out of 1440 (max. 8388607)
- 119 named destinations out of 1000 (max. 500000)
+ 1072 PDF objects out of 1200 (max. 8388607)
+ 115 named destinations out of 1000 (max. 500000)
  486 words of extra memory for PDF output out of 10000 (max. 10000000)
 

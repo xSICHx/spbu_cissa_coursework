@@ -1,35 +1,8 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{0}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
-
-\bibitem[Bogalo et~al.(2020)Bogalo, Poncela, and Senra]{bogalo2020}
-Juan Bogalo, Pilar Poncela, and Eva Senra.
-\newblock Circulant singular spectrum analysis: A new automated procedure for
-  signal extraction.
-\newblock \emph{Signal Processing}, 177, 2020.
-\newblock ISSN 0165-1684.
-\newblock \doi{10.1016/j.sigpro.2020.107750}.
-
-\bibitem[Golyandina et~al.(2001)Golyandina, Nekrutkin, and
-  Zhigljavsky]{golyandina2001analysis}
-Nina Golyandina, Vladimir Nekrutkin, and Anatoly Zhigljavsky.
-\newblock \emph{Analysis of Time Series Structure: SSA and Related Techniques}.
-\newblock Chapman and Hall/CRC, 2001.
-
-\bibitem[Golyandina et~al.(2023)Golyandina, Dudnik, and
-  Shlemov]{golyandina2023intelligent}
-Nina Golyandina, Pavel Dudnik, and Alex Shlemov.
-\newblock Intelligent identification of trend components in singular spectrum
-  analysis.
-\newblock \emph{Algorithms}, 16\penalty0 (7):\penalty0 353, 2023.
-\newblock \doi{10.3390/a16070353}.
-
-\bibitem[Pogrebnikov(2024)]{spbu_cissa_coursework_github}
-Nikolay Pogrebnikov.
-\newblock {SPbSU} {CISSA} coursework: Time series analysis.
-\newblock \url{https://github.com/xSICHx/spbu_cissa_coursework}, 2024.
 
 \end{thebibliography}
